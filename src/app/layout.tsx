@@ -2,16 +2,28 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/navbar";
+import Grain from "@/components/grain";
 
 const inter = Inter({
   variable: "--inter",
   subsets: ["latin"],
 });
 
-
 export const metadata: Metadata = {
   title: "DFS-Nettside",
-  description: "Utvilket av Lucas, Odin og Sidney",
+  description: "Laget av Lucas, Odin og Sidney.",
+  openGraph: {
+    title: "DFS-Nettside",
+    description: "Laget av Lucas, Odin og Sidney.",
+    images: [
+      {
+        url: "/opengraph.png",
+        width: 1280,
+        height: 720,
+        alt: "DFS-Nettside",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -24,7 +36,9 @@ export default function RootLayout({
       <body
         className={`${inter.variable} antialiased`}
       >
+        <Grain />
         <Navbar />
+
         {children}
       </body>
     </html>
