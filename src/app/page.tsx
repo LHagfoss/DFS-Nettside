@@ -9,6 +9,7 @@ export default function HomePage() {
     const preloadResources = async () => {
       try {
         await router.prefetch('/hjem');
+        await router.prefetch('/live');
         router.push("/hjem");
       } catch (error) {
         console.error('Preload failed:', error);

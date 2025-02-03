@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Live() {
+export default function Kontakt() {
   return (
     <main className="w-screen">
-        <title>DFS-Nettside | Info</title>
+        <title>DFS-Nettside | Kontakt</title>
         <p></p>
     </main>
   );

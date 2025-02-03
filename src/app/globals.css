@@ -8,13 +8,23 @@
   --primary: #fb191b;
   --secondary: #dd9e9f;
   --accent: #fa3b3b;  
+
+  --item-count: 8;
+  --width: 200px;
+  --height: 200px;
+  --duration: 20s;
+  --pos: ;
 }
+
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: "--inter", --inter, Helvetica, sans-serif;
 }
 
+nav {
+  z-index: 999;
+}
 
 .menu-bar, 
 .menu-overlay {
@@ -28,15 +38,6 @@ body {
   z-index: 1;
 }
 
-.menu-bar a,
-.menu-open p {
-  cursor: pointer;
-}
-
-.menu-close p {
-  cursor: pointer;
-}
-
 .menu-overlay {
   position: fixed;
   top: 0;
@@ -44,7 +45,6 @@ body {
   width: 100vw;
   height: 100vh;
   padding: 2em;
-  background-color: #18181b; 
   z-index: 2;
   display: flex;
   clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
@@ -62,7 +62,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-top: 2em;
 }
 
 .menu-preview {
@@ -71,13 +70,6 @@ body {
   justify-content: flex-end;
   align-items: flex-end;
 }
-
-.menu-close-icon p {
-  font-size: 100px;
-  -webkit-text-stroke: 5px #18181b;
-  line-height: 70%;
-}
-
 .menu-link-item {
   width: max-content;
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
@@ -133,5 +125,72 @@ body {
   .menu-info {
       flex-direction: column;
       gap: 1em;
+  }
+}
+
+.slider {
+  height: var(--height);
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.slider div {
+  position: absolute;
+  max-width: var(--width);
+  width: var(--width);
+  height: var(--height);
+  left: 100%;
+  animation: infiniteScrolling var(--duration) linear infinite;
+}
+
+@keyframes infiniteScrolling {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: calc(var(--width) * -1);
+  }
+}
+
+@media (max-width: 640px) {
+  .slider div {
+    animation-delay: calc(var(--pos) * (-1 * var(--duration) / calc(var(--item-count) - 5)));
+  }
+}
+
+@media (min-width: 640px) {
+  .slider div {
+    animation-delay: calc(var(--pos) * (-1 * var(--duration) / calc(var(--item-count) - 4)));
+  }
+}
+
+@media (min-width: 768px) {
+  .slider div {
+    animation-delay: calc(var(--pos) * (-1 * var(--duration) / calc(var(--item-count) - 3)));
+  }
+}
+
+@media (min-width: 1024px) {
+  .slider div {
+    animation-delay: calc(var(--pos) * (-1 * var(--duration) / calc(var(--item-count) - 2)));
+  }
+}
+
+@media (min-width: 1280px) {
+  .slider div {
+    animation-delay: calc(var(--pos) * (-1 * var(--duration) / calc(var(--item-count) - 1)));
+  }
+}
+
+@media (min-width: 1536px) {
+  .slider div {
+    animation-delay: calc(var(--pos) * (-1 * var(--duration) / calc(var(--item-count) - 0)));
   }
 }
