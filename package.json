@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
     "font-awesome": "^4.7.0",
     "gsap": "^3.12.7",
     "next": "^15.2.0-canary.33",
