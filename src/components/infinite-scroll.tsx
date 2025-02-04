@@ -11,7 +11,7 @@ export default function InfiniteScroll() {
     return (
         
         <div className="w-screen flex justify-center items-center py-8 flex-col ">
-            <div className="sleading-[90%] text-2xl sm:text-4xl md:font-bold p-6 ">
+            <div className="leading-[90%] text-2xl sm:text-4xl md:font-bold p-6 ">
                 <h1>Norges Cupen 2025</h1></div> 
             <div className="container flex justify-center items-center">
                 <div className="slider w-[200vw] flex gap-5 items-center text-xl leading-none">
@@ -31,10 +31,11 @@ export default function InfiniteScroll() {
 
 const Card = ({contentNumber, imageSrc, link}: {contentNumber: number, imageSrc: StaticImageData, link: string}) => {
     const [isHovered, setIsHovered] = useState(false);
-    
+    const handleClick=() => {
+        window.open(link, '_blank');
+    }
     return (
-        <a href={link}>
-            <div 
+            <div onClick={handleClick}
             className="scroll-item flex justify-center items-center"
             style={{ '--pos': contentNumber } as React.CSSProperties}
         >   <button 
@@ -48,6 +49,6 @@ const Card = ({contentNumber, imageSrc, link}: {contentNumber: number, imageSrc:
                 <Image src={imageSrc} alt={imageSrc.src} className="object-cover aspect-square" />
             </button>
         </div>
-        </a>
+        
     );
 };
