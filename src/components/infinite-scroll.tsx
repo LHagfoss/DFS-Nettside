@@ -15,14 +15,14 @@ export default function InfiniteScroll() {
                 <h1>Norges Cupen 2025</h1></div> 
             <div className="container flex justify-center items-center">
                 <div className="slider w-[200vw] flex gap-5 items-center text-xl leading-none">
-                    <Card contentNumber={1} imageSrc={logo1} link="https://mittdfs.no/hovedside/Skytterlagssider/sorlandskretsen/agder/kristiansand-og-omegn/" />
-                    <Card contentNumber={2} imageSrc={logo2} link="https://mittdfs.no/hovedside/Skytterlagssider/sorlandskretsen/agder/kristiansand-og-omegn/" />
-                    <Card contentNumber={3} imageSrc={logo3} link="https://mittdfs.no/hovedside/Skytterlagssider/sorlandskretsen/agder/kristiansand-og-omegn/"/>
-                    <Card contentNumber={4} imageSrc={logo4} link="https://mittdfs.no/hovedside/Skytterlagssider/sorlandskretsen/agder/kristiansand-og-omegn/"/>
-                    <Card contentNumber={5} imageSrc={logo1} link="https://mittdfs.no/hovedside/Skytterlagssider/sorlandskretsen/agder/kristiansand-og-omegn/"/>
-                    <Card contentNumber={6} imageSrc={logo2} link="https://mittdfs.no/hovedside/Skytterlagssider/sorlandskretsen/agder/kristiansand-og-omegn/" />
-                    <Card contentNumber={7} imageSrc={logo3} link="https://mittdfs.no/hovedside/Skytterlagssider/sorlandskretsen/agder/kristiansand-og-omegn/"/>
-                    <Card contentNumber={8} imageSrc={logo4} link="https://mittdfs.no/hovedside/Skytterlagssider/sorlandskretsen/agder/kristiansand-og-omegn/"/>
+                    <Card contentNumber={1} imageSrc={logo1} link="https://dfsgrasrot.no/soegne-skytterlag" />
+                    <Card contentNumber={2} imageSrc={logo2} link="https://dfsgrasrot.no/kristiansand-og-omegn-skytterlag" />
+                    <Card contentNumber={3} imageSrc={logo3} link="https://mittdfs.no/lyngdal"/>
+                    <Card contentNumber={4} imageSrc={logo4} link="https://laudalskytterlag.no/"/>
+                    <Card contentNumber={5} imageSrc={logo1} link="https://dfsgrasrot.no/soegne-skytterlag"/>
+                    <Card contentNumber={6} imageSrc={logo2} link="https://dfsgrasrot.no/kristiansand-og-omegn-skytterlag" />
+                    <Card contentNumber={7} imageSrc={logo3} link="https://mittdfs.no/lyngdal"/>
+                    <Card contentNumber={8} imageSrc={logo4} link="https://laudalskytterlag.no/"/>
                 </div>
             </div>
         </div>
