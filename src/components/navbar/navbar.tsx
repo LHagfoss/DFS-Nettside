@@ -83,18 +83,18 @@ export default function Navbar() {
 
     return (
         <nav className="menu-container">
-            <div className="menu-bar">
-                <div className="menu-logo mt-4">
-                    <Link href="/hjem" className=""><Image src={logoSecondIcon} alt={logoIcon.src} className="w-12 h-12 object-cover aspect-square" /></Link>
+            <div className="menu-bar bg-[--accent]">
+                <div className="menu-logo mt-2">
+                    <Link href="/hjem" className=""><Image src={logoIcon} alt={logoIcon.src} className="w-16 h-16 object-cover aspect-square" /></Link>
                 </div>
                 <div className="menu-open aspect-square flex justify-center items-center rounded-full cursor-pointer" onClick={toggleMenu}>
-                    <p className="text-red-100 bg-[--accent] rounded-full aspect-square flex items-center justify-center w-20 max-w-20">Meny</p>
+                    <p className="text-[--accent] bg-red-100 rounded-full aspect-square flex items-center justify-center w-20 max-w-20">Meny</p>
                 </div>
             </div>
             <div className="menu-overlay bg-[--accent]">
                 <div className="menu-overlay-bar">
                     <div className="menu-logo z-10">
-                        <Link href="/hjem" className=""><Image src={logoIcon} alt={logoIcon.src} className="w-12 h-12 object-cover aspect-square" /></Link>
+                        <Link href="/hjem" className=""><Image src={logoIcon} alt={logoIcon.src} className="w-16 h-16 object-cover aspect-square" /></Link>
                     </div>
                     <div className="menu-close bg-[#f4f4f5] aspect-square flex justify-center items-center rounded-full cursor-pointer z-20" onClick={toggleMenu}>
                         <p className="text-[--accent] bg-red-100 rounded-full aspect-square flex items-center justify-center w-20 max-w-20">Lukk</p>

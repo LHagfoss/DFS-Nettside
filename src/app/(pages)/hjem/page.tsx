@@ -17,6 +17,10 @@ export default function Home() {
           <p className="sm:text-xl text-sm">- Forsvar, sport og god våpenkultur</p> 
         </div>
       </header>
+      
+      <div className="leading-[90%] text-2xl sm:text-4xl md:font-bold p-6 ">
+      <h1>Norges Cupen 2025</h1>
+      </div> 
       <InfiniteScroll />
       <SisteNyttSlider />
       <section className="w-screen h-screen">

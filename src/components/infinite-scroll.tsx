@@ -1,6 +1,6 @@
-
 import { StaticImageData } from "next/image";
 import Image from "next/image";
+import { useState } from "react";
 
 import logo1 from "@/public/logo1.png"
 import logo2 from "@/public/logo2.png"
@@ -8,7 +8,6 @@ import logo3 from "@/public/logo3.png"
 import logo4 from "@/public/logo4.png"
 
 export default function InfiniteScroll() {
-
     return (
         <div className="w-screen flex justify-center items-center py-5">
             <div className="container flex justify-center items-center">
@@ -28,12 +27,22 @@ export default function InfiniteScroll() {
 };
 
 const Card = ({contentNumber, imageSrc}: {contentNumber: number, imageSrc: StaticImageData}) => {
+    const [isHovered, setIsHovered] = useState(false);
+    
     return (
         <div 
             className="scroll-item flex justify-center items-center"
             style={{ '--pos': contentNumber } as React.CSSProperties}
-        >
-            <Image src={imageSrc} alt={imageSrc.src} className="object-cover aspect-square" />
+        >   <button 
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+                style={{ 
+                    transform: isHovered ? 'scale(1.1)' : 'scale(1)',
+                    transition: 'transform 0.3s ease-in-out'
+                }}
+            >
+                <Image src={imageSrc} alt={imageSrc.src} className="object-cover aspect-square" />
+            </button>
         </div>
     );
 };
