@@ -9,7 +9,7 @@ export default function Home() {
   return (  
     <>
       <title>DFS-Nettside | Hjem</title>
-      <header className="w-screen h-screen p-10 flex items-center">
+      <header className="w-screen h-screen flex items-center">
         <div className="flex flex-col leading-[90%] text-4xl sm:text-8xl md:font-bold ">
           <h1>DET</h1> 
           <h1>FRIVILLIGE</h1>

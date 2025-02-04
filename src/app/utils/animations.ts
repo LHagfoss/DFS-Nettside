@@ -33,6 +33,7 @@ export const animatePageOut = (href: string, router: AppRouterInstance, onComple
         const bannerFour = document.getElementById("banner-4");
 
         if (bannerContainer && bannerOne && bannerTwo && bannerThree && bannerFour) {
+            
             const tl = gsap.timeline({
                 onComplete: () => {
                     router.push(href);
@@ -53,6 +54,5 @@ export const animatePageOut = (href: string, router: AppRouterInstance, onComple
             onComplete();
             resolve();
         }
-        
     });
 };  

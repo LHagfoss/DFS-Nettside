@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Lars Hansen",
+        "bane": "Bane 1",
+        "skudd": 0
+    },
+    {
+        "id": 2,
+        "name": "Erik Nilsen",
+        "bane": "Bane 2",
+        "skudd": 0
+    },
+    {
+        "id": 3,
+        "name": "Anna Berg",
+        "bane": "Bane 3",
+        "skudd": 0
+    },
+    {
+        "id": 4,
+        "name": "Kari Olsen",
+        "bane": "Bane 4",
+        "skudd": 0
+    },
+    {
+        "id": 5,
+        "name": "Per Jensen",
+        "bane": "Bane 5",
+        "skudd": 0
+    }
+] 
