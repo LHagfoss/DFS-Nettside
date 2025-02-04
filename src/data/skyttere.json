@@ -3,30 +3,66 @@
         "id": 1,
         "name": "Lars Hansen",
         "bane": "Bane 1",
-        "skudd": 0
+        "avstand" : "100m",
+        "skudd": 0,
+        "rank" : 1,
+        "lag" : "Søgne",
+        "by" : "Søgne",
+        "prøveSkudd" : 12,
+        "totalPoeng" : 108,
+        "runde" : 10
+        
     },
     {
         "id": 2,
         "name": "Erik Nilsen",
         "bane": "Bane 2",
-        "skudd": 0
+        "avstand" : "100m",
+        "skudd": 0,
+        "rank" : 2,
+        "lag" : "Kristiansand",
+        "by" : "Kristiansand",
+        "prøveSkudd" : 12,
+        "totalPoeng" : 63,
+        "runde" : 10
     },
     {
         "id": 3,
         "name": "Anna Berg",
         "bane": "Bane 3",
-        "skudd": 0
+        "avstand" : "100m",
+        "skudd": 0,
+        "rank" : 2,
+        "lag" : "Kristiansand",
+        "by" : "Kristiansand",
+        "prøveSkudd" : 12,
+        "totalPoeng" : 63,
+        "runde" : 10
     },
     {
         "id": 4,
         "name": "Kari Olsen",
         "bane": "Bane 4",
-        "skudd": 0
+        "avstand" : "100m",
+        "skudd": 0,
+        "rank" : 2,
+        "lag" : "Kristiansand",
+        "by" : "Kristiansand",
+        "prøveSkudd" : 12,
+        "totalPoeng" : 63,
+        "runde" : 10
     },
     {
         "id": 5,
         "name": "Per Jensen",
         "bane": "Bane 5",
-        "skudd": 0
+        "avstand" : "100m",
+        "skudd": 0,
+        "rank" : 2,
+        "lag" : "Kristiansand",
+        "by" : "Kristiansand",
+        "prøveSkudd" : 12,
+        "totalPoeng" : 63,
+        "runde" : 10
     }
 ] 
