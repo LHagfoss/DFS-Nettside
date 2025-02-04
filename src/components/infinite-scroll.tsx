@@ -15,25 +15,26 @@ export default function InfiniteScroll() {
                 <h1>Norges Cupen 2025</h1></div> 
             <div className="container flex justify-center items-center">
                 <div className="slider w-[200vw] flex gap-5 items-center text-xl leading-none">
-                    <Card contentNumber={1} imageSrc={logo1} />
-                    <Card contentNumber={2} imageSrc={logo2} />
-                    <Card contentNumber={3} imageSrc={logo3} />
-                    <Card contentNumber={4} imageSrc={logo4} />
-                    <Card contentNumber={5} imageSrc={logo1} />
-                    <Card contentNumber={6} imageSrc={logo2} />
-                    <Card contentNumber={7} imageSrc={logo3} />
-                    <Card contentNumber={8} imageSrc={logo4} />
+                    <Card contentNumber={1} imageSrc={logo1} link="https://mittdfs.no/hovedside/Skytterlagssider/sorlandskretsen/agder/kristiansand-og-omegn/" />
+                    <Card contentNumber={2} imageSrc={logo2} link="https://mittdfs.no/hovedside/Skytterlagssider/sorlandskretsen/agder/kristiansand-og-omegn/" />
+                    <Card contentNumber={3} imageSrc={logo3} link="https://mittdfs.no/hovedside/Skytterlagssider/sorlandskretsen/agder/kristiansand-og-omegn/"/>
+                    <Card contentNumber={4} imageSrc={logo4} link="https://mittdfs.no/hovedside/Skytterlagssider/sorlandskretsen/agder/kristiansand-og-omegn/"/>
+                    <Card contentNumber={5} imageSrc={logo1} link="https://mittdfs.no/hovedside/Skytterlagssider/sorlandskretsen/agder/kristiansand-og-omegn/"/>
+                    <Card contentNumber={6} imageSrc={logo2} link="https://mittdfs.no/hovedside/Skytterlagssider/sorlandskretsen/agder/kristiansand-og-omegn/" />
+                    <Card contentNumber={7} imageSrc={logo3} link="https://mittdfs.no/hovedside/Skytterlagssider/sorlandskretsen/agder/kristiansand-og-omegn/"/>
+                    <Card contentNumber={8} imageSrc={logo4} link="https://mittdfs.no/hovedside/Skytterlagssider/sorlandskretsen/agder/kristiansand-og-omegn/"/>
                 </div>
             </div>
         </div>
     );
 };
 
-const Card = ({contentNumber, imageSrc}: {contentNumber: number, imageSrc: StaticImageData}) => {
+const Card = ({contentNumber, imageSrc, link}: {contentNumber: number, imageSrc: StaticImageData, link: string}) => {
     const [isHovered, setIsHovered] = useState(false);
     
     return (
-        <div 
+        <a href={link}>
+            <div 
             className="scroll-item flex justify-center items-center"
             style={{ '--pos': contentNumber } as React.CSSProperties}
         >   <button 
@@ -47,5 +48,6 @@ const Card = ({contentNumber, imageSrc}: {contentNumber: number, imageSrc: Stati
                 <Image src={imageSrc} alt={imageSrc.src} className="object-cover aspect-square" />
             </button>
         </div>
+        </a>
     );
 };
