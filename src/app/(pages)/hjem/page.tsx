@@ -18,9 +18,7 @@ export default function Home() {
         </div>
       </header>
       
-      <div className="leading-[90%] text-2xl sm:text-4xl md:font-bold p-6 ">
-      <h1>Norges Cupen 2025</h1>
-      </div> 
+
       <InfiniteScroll />
       <SisteNyttSlider />
       <section className="w-screen h-screen">
