@@ -22,7 +22,6 @@ export default function Home() {
 
       <InfiniteScroll />
       <SisteNyttSlider />
-      <Resultater />
       <section className="w-screen h-screen">
 
       </section>
