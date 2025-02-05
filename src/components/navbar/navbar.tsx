@@ -13,20 +13,22 @@ export default function Navbar() {
                     </div>
                 </div>
                 <div className="flex items-center space-x-4">
-                    <button className="text-white hover:bg-indigo-600 px-3 py-2 rounded-md text-sm font-medium">VIS ENHETER</button>
-                    <button className="bg-white text-indigo-700 hover:bg-indigo-100 px-4 py-2 rounded-md text-sm font-medium">LOGG INN</button>
+                    <button className="text-white hover:bg-indigo-600 px-3 py-2 rounded-md text-sm font-bold ">VIS ENHETER</button>
+                    <button className="bg-white text-indigo-700 hover:bg-indigo-100 px-4 py-2 rounded-md text-sm font-bold">LOGG INN</button>
                 </div>
             </div>
 
             <div className="w-screen flex justify-center items-center bg-indigo-100">
-                <div className="container flex justify-between item-center py-3 font-bold">
-                    <a href="#" className="text-indigo-600 hover:bg-indigo-300 px-3 py-2 rounded-md text-sm">INFO FRA DFS</a>
-                    <a href="#" className="text-indigo-600 hover:bg-indigo-300 px-3 py-2 rounded-md text-sm">MITT DFS - PÅMELDING OG RESULTATER</a>
-                    <a href="#" className="text-indigo-600 hover:bg-indigo-300 px-3 py-2 rounded-md text-sm">BLI MEDLEM</a>
-                    <a href="#" className="text-indigo-600 hover:bg-indigo-300 px-3 py-2 rounded-md text-sm">NETTBUTIKK</a>
-                    <a href="#" className="text-indigo-600 hover:bg-indigo-300 px-3 py-2 rounded-md text-sm">KONTAKTINFO</a>
-                    <a href="#" className="text-indigo-600 hover:bg-indigo-300 px-3 py-2 rounded-md text-sm">LANDSSKYTTERSTEVNET</a>
-                    <a href="#" className="text-indigo-600 hover:bg-indigo-300 px-3 py-2 rounded-md text-sm">SKYTTERBOK</a>
+                <div className="container flex justify-between item-center py-3 font-bold uppercase">
+                    <a href="#" className="text-indigo-600 hover:bg-indigo-300 px-3 py-2 rounded-md text-sm">Resultater</a>
+                    <a href="#" className="text-indigo-600 hover:bg-indigo-300 px-3 py-2 rounded-md text-sm">Stevneinfo</a>
+                    <a href="#" className="text-indigo-600 hover:bg-indigo-300 px-3 py-2 rounded-md text-sm">Påmelding</a>
+                    <a href="#" className="text-indigo-600 hover:bg-indigo-300 px-3 py-2 rounded-md text-sm">Arrangørene</a>
+                    <a href="#" className="text-indigo-600 hover:bg-indigo-300 px-3 py-2 rounded-md text-sm">Veibeskrivelse</a>
+                    <a href="#" className="text-indigo-600 hover:bg-indigo-300 px-3 py-2 rounded-md text-sm">Overnatting</a>
+                    <a href="#" className="text-indigo-600 hover:bg-indigo-300 px-3 py-2 rounded-md text-sm">Aktiviteter</a>
+                    <a href="#" className="text-indigo-600 hover:bg-indigo-300 px-3 py-2 rounded-md text-sm" target="_blank" rel="noopener noreferrer">NC</a>
+                    <a href="#" className="text-indigo-600 hover:bg-indigo-300 px-3 py-2 rounded-md text-sm">Sponsorer</a>
                 </div>
             </div>
         </nav>

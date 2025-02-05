@@ -12,7 +12,7 @@ export default function InfiniteScroll() {
         
         <div className="w-screen flex justify-center items-center flex-col ">
             <div className="leading-[90%] text-2xl sm:text-4xl md:font-bold p-6">
-                <h1>Norges Cupen 2025</h1>
+                <h1>Norgescupen 2025</h1>
             </div> 
             <div className="container flex justify-center items-center slider-container">
                 <div className="slider w-[200vw] flex gap-5 items-center text-xl leading-none">
