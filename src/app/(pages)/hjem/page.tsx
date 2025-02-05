@@ -3,6 +3,7 @@
 import React from "react";
 import InfiniteScroll from "@/components/infinite-scroll";
 import SisteNyttSlider from "@/components/siste-nytt-slider";
+import Resultater from "@/components/resultater";
 
 export default function Home() {
   
@@ -21,6 +22,7 @@ export default function Home() {
 
       <InfiniteScroll />
       <SisteNyttSlider />
+      <Resultater />
       <section className="w-screen h-screen">
 
       </section>
