@@ -8,9 +8,8 @@ import Image from "next/image";
 import dfslogo from "@/public/dfslogo.png";
 
 export default function Home() {
-  
   const dfsnettside = () => {
-    window.location.href = "https://dfs.no/info","_blank";
+    window.open("https://dfs.no/info", "_blank");
   };
 
   return (  
