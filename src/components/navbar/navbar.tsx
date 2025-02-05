@@ -20,13 +20,15 @@ export default function Navbar() {
 
             <div className="w-screen flex justify-center items-center bg-indigo-100">
                 <div className="container flex justify-between item-center py-3 font-bold">
-                    <a href="#" className="text-indigo-600 hover:bg-indigo-300 px-3 py-2 rounded-md text-sm">INFO FRA DFS</a>
-                    <a href="#" className="text-indigo-600 hover:bg-indigo-300 px-3 py-2 rounded-md text-sm">MITT DFS - PÅMELDING OG RESULTATER</a>
-                    <a href="#" className="text-indigo-600 hover:bg-indigo-300 px-3 py-2 rounded-md text-sm">BLI MEDLEM</a>
-                    <a href="#" className="text-indigo-600 hover:bg-indigo-300 px-3 py-2 rounded-md text-sm">NETTBUTIKK</a>
-                    <a href="#" className="text-indigo-600 hover:bg-indigo-300 px-3 py-2 rounded-md text-sm">KONTAKTINFO</a>
-                    <a href="#" className="text-indigo-600 hover:bg-indigo-300 px-3 py-2 rounded-md text-sm">LANDSSKYTTERSTEVNET</a>
-                    <a href="#" className="text-indigo-600 hover:bg-indigo-300 px-3 py-2 rounded-md text-sm">SKYTTERBOK</a>
+                    <a href="#" className="text-indigo-600 hover:bg-indigo-300 px-3 py-2 rounded-md text-sm">Resultater</a>
+                    <a href="#" className="text-indigo-600 hover:bg-indigo-300 px-3 py-2 rounded-md text-sm">Stevneinfo</a>
+                    <a href="#" className="text-indigo-600 hover:bg-indigo-300 px-3 py-2 rounded-md text-sm">Påmelding</a>
+                    <a href="#" className="text-indigo-600 hover:bg-indigo-300 px-3 py-2 rounded-md text-sm">Arrangørene</a>
+                    <a href="#" className="text-indigo-600 hover:bg-indigo-300 px-3 py-2 rounded-md text-sm">Veibeskrivelse</a>
+                    <a href="#" className="text-indigo-600 hover:bg-indigo-300 px-3 py-2 rounded-md text-sm">Overnatting</a>
+                    <a href="#" className="text-indigo-600 hover:bg-indigo-300 px-3 py-2 rounded-md text-sm">Aktiviteter</a>
+                    <a href="#" className="text-indigo-600 hover:bg-indigo-300 px-3 py-2 rounded-md text-sm" target="_blank" rel="noopener noreferrer">NC (åpnes i ny fane)</a>
+                    <a href="#" className="text-indigo-600 hover:bg-indigo-300 px-3 py-2 rounded-md text-sm">Sponsorer</a>
                 </div>
             </div>
         </nav>
