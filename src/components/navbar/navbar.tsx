@@ -1,170 +1,196 @@
 "use client"
 
-import React, { useState, useRef, useEffect } from "react";
-import { gsap } from "gsap"
-import { useGSAP } from "@gsap/react"
-import Image from "next/image";
-import { usePathname, useRouter } from "next/navigation"
-import BaneSelector from "@/components/live/bane-selector"
-import { animatePageOut } from "@/app/utils/animations"
-
-import MenuLink from "@/components/navbar/navbar-link";
+import * as React from "react"
+import Link from "next/link"
+import { FaCode } from "react-icons/fa"
+import Image from "next/image"
 
 import logoIcon from "@/public/logo.svg"
 
-const menuLinks = [
-    { path: "/hjem", label: "Hjem" },
-    { path: "/live", label: "Live" },
-    { path: "/info", label: "Info" },
-    { path: "/kontakt", label: "Kontakt" },
+import { cn } from "@/lib/utils"
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu"
+
+const components: { title: string; href: string; description: string }[] = [
+  {
+    title: "Alert Dialog",
+    href: "/docs/primitives/alert-dialog",
+    description:
+      "A modal dialog that interrupts the user with important content and expects a response.",
+  },
+  {
+    title: "Hover Card",
+    href: "/docs/primitives/hover-card",
+    description:
+      "For sighted users to preview content available behind a link.",
+  },
+  {
+    title: "Progress",
+    href: "/docs/primitives/progress",
+    description:
+      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+  },
+  {
+    title: "Scroll-area",
+    href: "/docs/primitives/scroll-area",
+    description: "Visually or semantically separates content.",
+  },
+  {
+    title: "Tabs",
+    href: "/docs/primitives/tabs",
+    description:
+      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+  },
+  {
+    title: "Tooltip",
+    href: "/docs/primitives/tooltip",
+    description:
+      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+  },
 ]
 
-type GSAPTimeline = {
-    play: () => void;
-    reverse: () => void;
-};
+export function Navbar() {
+  return (
+    <div className="w-screen fixed left-0 top-0 flex justify-between items-centers p-4 z-[9999] text-indigo-100 bg-indigo-700">
+        <Image src={logoIcon} alt="yes" className="w-16 h-16" />
 
-export default function Navbar() {
-    const router = useRouter()
-    const container = useRef(null);
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isBaneSelectorOpen, setIsBaneSelectorOpen] = useState(false);
-    const [time, setLocalTime] = useState("00.00.00");
-    const pathname = usePathname()
-    const isLiveRoute = pathname === "/live" || pathname.startsWith("/live/")
-
-    useEffect(() => {
-        const updateTime = () => {
-            const options: Intl.DateTimeFormatOptions = { 
-                timeZone: "Europe/Oslo", 
-                hour: "numeric", 
-                minute: "2-digit", 
-                second: "2-digit", 
-                hour12: false 
-            };
-            setLocalTime(new Intl.DateTimeFormat('en-US', options).format(new Date()));
-        };
-
-        updateTime();
-        const intervalId = setInterval(updateTime, 1000);
-
-        return () => clearInterval(intervalId); 
-    }, []);
-
-    const tl = useRef<GSAPTimeline | null>(null);
-
-    const handleNavigation = async (href: string) => {
-        await animatePageOut(href, router, () => {
-            setIsMenuOpen(false)
-        })
-    }
-
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen)
-    }
-
-    const toggleBaneSelector = () => {
-        setIsBaneSelectorOpen(!isBaneSelectorOpen)
-    }
-
-    useGSAP(() => {
-        gsap.set(".menu-link-link-holder", { y: 100});
-
-        tl.current = gsap.timeline({ paused: true})
-            .to(".menu-overlay", {
-                duration: 1.25,
-                clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-                ease: "power4.inOut",
-            })
-            .to(".menu-link-link-holder", {
-                y: 0,
-                duration: 1,
-                stagger: 0.1,
-                ease: "power4.inOut",
-                delay: -0.75,
-            });
-        }, 
-        { scope: container.current || undefined },
-    );
-
-    useEffect(() => {
-        if (isMenuOpen) {
-            tl.current?.play();
-        } else {
-            tl.current?.reverse();
-        }
-
-    }, [isMenuOpen]);
-
-    return (
-        <>
-            <nav className="menu-container">
-                <div className="menu-bar bg-[--accent] px-5 py-2">
-                    <div className="menu-logo mt-2">
-                        <div onClick={() => handleNavigation("/hjem")} className="cursor-pointer">
-                            <Image src={logoIcon} alt={logoIcon.src} className="w-16 h-16 object-cover aspect-square" />
+        <NavigationMenu className="">
+        <NavigationMenuList className="gap-4">
+            <NavigationMenuItem>
+            <NavigationMenuTrigger>Resultater</NavigationMenuTrigger>
+            <NavigationMenuContent>
+                <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                <li className="row-span-3">
+                    <NavigationMenuLink asChild>
+                    <a
+                        className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                        href="/"
+                    >
+                        <FaCode className="h-6 w-6" />
+                        <div className="mb-2 mt-4 text-lg font-medium">
+                        shadcn/ui
                         </div>
-                    </div>
-                    <div className="flex items-center gap-4">
-                        {isLiveRoute && (
-                            <div className="aspect-square flex justify-center items-center rounded-full cursor-pointer" onClick={toggleBaneSelector}>
-                                <p className="text-[--accent] bg-red-100 rounded-full aspect-square flex items-center justify-center w-20 max-w-20">Se baner</p>
-                            </div>
-                        )}
-                        <div className="aspect-square flex justify-center items-center rounded-full cursor-pointer" onClick={toggleMenu}>
-                            <p className="text-[--accent] bg-red-100 rounded-full aspect-square flex items-center justify-center w-20 max-w-20">Meny</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="menu-overlay bg-[--accent] px-5 py-2">
-                    <div className="menu-overlay-bar">
-                        <div className="menu-logo z-10">
-                            <div onClick={() => handleNavigation("/hjem")} className="cursor-pointer">
-                                <Image src={logoIcon} alt={logoIcon.src} className="w-16 h-16 object-cover aspect-square" />
-                            </div>
-                        </div>
-                        <div className="menu-close bg-[#f4f4f5] aspect-square flex justify-center items-center rounded-full cursor-pointer z-20" onClick={toggleMenu}>
-                            <p className="text-[--accent] bg-red-100 rounded-full aspect-square flex items-center justify-center w-20 max-w-20">Lukk</p>
-                        </div>
-                    </div>
-                    <div className="menu-close-icon text-[#f4f4f5] opacity-0 pointer-events-none" >
-                        <p>&#x2715;</p>
-                    </div>
-                    <div className="menu-copy text-[#f4f4f5]">
-                        <div className="menu-links z-10">
-                            {menuLinks.map((link, index) => (
-                                <div key={index} className="menu-link-item">
-                                    <div className="menu-link-link-holder">
-                                        <MenuLink 
-                                            href={link.path} 
-                                            label={link.label} 
-                                            className="menu-link" 
-                                            onClick={() => handleNavigation(link.path)}
-                                        />
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                        <div className="menu-info">
-                            <div className="menu-info-col">
-                                <p className="font-bold">Utvilkere</p>
-                                <a href="#">LHagfoss &#8599;</a>
-                                <a href="#">MelyGuy&#8599;</a>
-                                <a href="#">00Siddi&#8599;</a>
-                            </div>                  
-                            <div className="menu-info-col">
-                                <p>{time}</p>
-                            </div>
-                            <div className="menu-info-col">
-                                <p>+69 69 69 69</p>
-                                <p>Copyright © 2025</p>
-                            </div>      
-                        </div>
-                    </div>
-                </div>
-            </nav>
-            
-            {isLiveRoute && <BaneSelector isOpen={isBaneSelectorOpen} onClose={() => setIsBaneSelectorOpen(false)} />}
-        </>
-    );
-};
+                        <p className="text-sm leading-tight text-muted-foreground">
+                        Beautifully designed components built with Radix UI and
+                        Tailwind CSS.
+                        </p>
+                    </a>
+                    </NavigationMenuLink>
+                </li>
+                <ListItem href="/docs" title="Introduction">
+                    Re-usable components built using Radix UI and Tailwind CSS.
+                </ListItem>
+                <ListItem href="/docs/installation" title="Installation">
+                    How to install dependencies and structure your app.
+                </ListItem>
+                <ListItem href="/docs/primitives/typography" title="Typography">
+                    Styles for headings, paragraphs, lists...etc
+                </ListItem>
+                </ul>
+            </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+            <NavigationMenuTrigger>Stevneinfo</NavigationMenuTrigger>
+            <NavigationMenuContent>
+                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                {components.map((component) => (
+                    <ListItem
+                    key={component.title}
+                    title={component.title}
+                    href={component.href}
+                    >
+                    {component.description}
+                    </ListItem>
+                ))}
+                </ul>
+            </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+            <Link href="#" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                Påmelding
+                </NavigationMenuLink>
+            </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+            <Link href="#" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                Arrangørene
+                </NavigationMenuLink>
+            </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+            <Link href="#" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                Veibeskrivelse
+                </NavigationMenuLink>
+            </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+            <Link href="#" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                Overnatting
+                </NavigationMenuLink>
+            </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+            <Link href="#" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                Aktiviteter
+                </NavigationMenuLink>
+            </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+            <Link href="#" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                NC
+                </NavigationMenuLink>
+            </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+            <Link href="#" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                Sponsorer
+                </NavigationMenuLink>
+            </Link>
+            </NavigationMenuItem>
+        </NavigationMenuList>
+        </NavigationMenu>
+
+        <Image src={logoIcon} alt="yes" className="w-16 h-16 opacity-0" />
+    </div>
+  )
+}
+
+const ListItem = React.forwardRef<
+  React.ElementRef<"a">,
+  React.ComponentPropsWithoutRef<"a">
+>(({ className, title, children, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <a
+          ref={ref}
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            className
+          )}
+          {...props}
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </a>
+      </NavigationMenuLink>
+    </li>
+  )
+})
+ListItem.displayName = "ListItem"

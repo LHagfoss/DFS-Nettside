@@ -32,16 +32,16 @@ const ShootingResults: React.FC<ShootingResultsProps> = ({ results }) => {
               <img src={result.targetImage} alt="Blink" className="h-24 w-24 rounded-full border border-red-400" />
             </div>
             <div>
-              <h2 className="text-xl font-bold text-red-600 mb-2">{result.name}</h2>
-              <p className="text-red-800"><strong>Rank:</strong> {result.rank}</p>
-              <p className="text-red-800"><strong>Tabell på poeng:</strong> {result.points}</p>
-              <p className="text-red-800"><strong>Hvilket lag:</strong> {result.team}</p>
-              <p className="text-red-800"><strong>Sted (by):</strong> {result.city}</p>
-              <p className="text-red-800"><strong>Prøveskudd:</strong> {result.testShots}</p>
-              <p className="text-red-800"><strong>Total:</strong> {result.total}</p>
-              <p className="text-red-800"><strong>Bane (1, 2 eller 3 lsm):</strong> {result.range}</p>
-              <p className="text-red-800"><strong>Runde:</strong> {result.round}</p>
-              <p className="text-red-800"><strong>Avstand:</strong> {result.distance}</p>
+              <h2 className="text-xl font-bold text-indigo-600 mb-2">{result.name}</h2>
+              <p className="text-indigo-800"><strong>Rank:</strong> {result.rank}</p>
+              <p className="text-indigo-800"><strong>Tabell på poeng:</strong> {result.points}</p>
+              <p className="text-indigo-800"><strong>Hvilket lag:</strong> {result.team}</p>
+              <p className="text-indigo-800"><strong>Sted (by):</strong> {result.city}</p>
+              <p className="text-indigo-800"><strong>Prøveskudd:</strong> {result.testShots}</p>
+              <p className="text-indigo-800"><strong>Total:</strong> {result.total}</p>
+              <p className="text-indigo-800"><strong>Bane (1, 2 eller 3 lsm):</strong> {result.range}</p>
+              <p className="text-indigo-800"><strong>Runde:</strong> {result.round}</p>
+              <p className="text-indigo-800"><strong>Avstand:</strong> {result.distance}</p>
             </div>
           </div>
         ))}
