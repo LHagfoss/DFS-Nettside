@@ -23,7 +23,7 @@ export default function Home() {
           <h1>SKYTTERVESEN</h1>
           <p className="sm:text-xl text-sm">- Forsvar, sport og god våpenkultur</p>
           </div>
-        <Image onClick={dfsnettside} className="w-[350px]" src={dfslogo} alt="dfslogo"></Image>
+        <Image onClick={dfsnettside} className="w-[350px] hover:scale-105 active:scale-90 duration-300" src={dfslogo} alt="dfslogo"></Image>
       
         </div>
       </header>
