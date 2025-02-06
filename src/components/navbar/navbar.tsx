@@ -6,6 +6,7 @@ import { animateHomeIn } from "@/app/utils/animations";
 
 import logoIcon from "@/public/logo.svg"
 import { useEffect } from "react";
+import Link from "next/link";
 
 export default function Navbar() {
     
@@ -19,7 +20,7 @@ export default function Navbar() {
                 <div className="flex items-center">
                     <div className="flex-shrink-0">
                         {/* Logo placeholder */}
-                        <Image src={logoIcon} alt={logoIcon.src} className="w-12 h-12"/>
+                        <Link href="/hjem"><Image src={logoIcon} alt={logoIcon.src} className="w-12 h-12"/></Link>
                     </div>
                 </div>
                 <div className="flex items-center space-x-4">
