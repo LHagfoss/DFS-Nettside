@@ -109,20 +109,18 @@ export default function SisteNyttSlider() {
     <>
       <div className="w-screen flex flex-col items-center justify-center p-5 sm:p-0">
         <h1 className="container text-5xl text-[--text] font-bold mb-4">SISTE NYTT</h1>
-        <div className="container relative overflow-hidden bg-red-400 rounded-3xl p-8">
+        <div className="container relative overflow-hidden bg-indigo-400 rounded-3xl p-8">
           <div className="flex items-stretch justify-between gap-4">
-            {!isMobile && (
+
+            <div className="w-full overflow-hidden rounded-xl">
               <button
                 onClick={prevSlide}
-                className="sm:w-12 min-w-24 flex items-center justify-center bg-red-300 text-white hover:opacity-75 rounded-lg"
+                className="absolute left-5 top-[50%] translate-y-[-50%] z-10 w-full sm:w-12 h-12 flex items-center justify-center bg-indigo-300 text-white hover:opacity-75 rounded-lg"
               >
-                <svg className="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
-            )}
-
-            <div className="w-full max-w-6xl overflow-hidden">
               <div
                 ref={sliderRef}
                 className="flex"
@@ -136,55 +134,31 @@ export default function SisteNyttSlider() {
                     className="relative px-2"
                     style={{ width: `${100 / cards.length}%` }}
                   >
-                    <div className="h-full overflow-hidden rounded-lg bg-white">
+                    <div className="h-full overflow-hidden rounded-lg bg-white relative inset-0">
                       <img
                         src={card.image}
                         alt={card.title}
-                        className="h-48 w-full object-cover md:h-64"
+                        className="w-full object-cover aspect-square"
                       />
-                      <div className="bg-gray-200 p-4 h-full">
+                      <div className="absolute bg-[#00000063] p-4 backdrop-blur-xl rounded-3xl left-5 bottom-5 right-5 text-indigo-50">
                         <h3 className="text-xl font-bold">{card.title}</h3>
                         <p className="mt-2">{card.paragraph}</p>
-                        <p className="mt-2 text-gray-600">{card.date}</p>
+                        <p className="mt-2 text-indigo-300">{card.date}</p>
                       </div>
                     </div>
                   </div>
                 ))}
               </div>
-            </div>
-
-            {!isMobile && (
               <button
                 onClick={nextSlide}
-                className="sm:w-12 min-w-24 flex items-center justify-center bg-red-300 text-white hover:opacity-75 rounded-lg"
+                className="absolute right-5 top-[50%] translate-y-[-50%] w-full sm:w-12 h-12 flex items-center justify-center bg-indigo-300 text-white hover:opacity-75 rounded-lg"
               >
-                <svg className="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
-            )}
+            </div>
           </div>
-
-          {isMobile && (
-            <div className="flex justify-center gap-4 mt-4">
-              <button
-                onClick={prevSlide}
-                className="w-full sm:w-12 h-12 flex items-center justify-center bg-red-300 text-white hover:opacity-75 rounded-lg"
-              >
-                <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-              <button
-                onClick={nextSlide}
-                className="w-full sm:w-12 h-12 flex items-center justify-center bg-red-300 text-white hover:opacity-75 rounded-lg"
-              >
-                <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-            </div>
-          )}
         </div>
       </div>
     </>
