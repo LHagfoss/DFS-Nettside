@@ -1,8 +1,18 @@
+"use client";
+
 import Image from "next/image"
 
+import { animateHomeIn } from "@/app/utils/animations";
+
 import logoIcon from "@/public/logo.svg"
+import { useEffect } from "react";
 
 export default function Navbar() {
+    
+    useEffect(() => {
+        animateHomeIn()
+    }, [])
+
     return (
         <nav className="fixed bg-indigo-700 w-screen flex flex-col justify-center items-center">
             <div className="container flex justify-between items-center py-3">
