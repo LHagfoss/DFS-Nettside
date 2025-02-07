@@ -3,7 +3,6 @@
 import React from "react";
 import InfiniteScroll from "@/components/infinite-scroll";
 import SisteNyttSlider from "@/components/siste-nytt-slider";
-import Overnatting from "@/components/overnatting";
 import Image from "next/image";
 import dfslogo from "@/public/dfslogo.png";
 
