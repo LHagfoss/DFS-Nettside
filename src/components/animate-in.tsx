@@ -1,5 +1,7 @@
+"use client";
+
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
 
 interface AnimateInProps {
   children: React.ReactNode;
@@ -10,27 +12,27 @@ interface AnimateInProps {
   once?: boolean;
 }
 
-export const AnimateIn: React.FC<AnimateInProps> = ({
+const AnimateIn: React.FC<AnimateInProps> = ({
   children,
-  initial = { opacity: 0, y: 24 },
+  initial = { opacity: 0, y: 50 },
   animate = { opacity: 1, y: 0 },
   delay = 0,
-  duration = 0.6,
+  duration = 1.5,
   once = true,
   ...props
 }) => {
   const [inView, setInView] = useState<boolean>(false);
-  const ref = useRef(null);
+  const ref = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setInView(true);
-          once && observer.disconnect();
+          if (once && ref.current) observer.unobserve(ref.current);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.2 }
     );
 
     if (ref.current) observer.observe(ref.current);
@@ -49,3 +51,5 @@ export const AnimateIn: React.FC<AnimateInProps> = ({
     </motion.div>
   );
 };
+
+export default AnimateIn;

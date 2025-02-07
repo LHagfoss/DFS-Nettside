@@ -62,11 +62,9 @@ export default function SisteNyttSlider() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const sliderRef = useRef<HTMLDivElement>(null)
   const [cardsPerView, setCardsPerView] = useState(3)
-  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 640)
       setCardsPerView(window.innerWidth < 640 ? 1 : 3)
     }
 

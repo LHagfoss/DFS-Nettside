@@ -5,6 +5,7 @@ import InfiniteScroll from "@/components/infinite-scroll";
 import SisteNyttSlider from "@/components/siste-nytt-slider";
 import Image from "next/image";
 import dfslogo from "@/public/logoSecond.png";
+import AnimateIn from "@/components/animate-in";
 
 export default function Home() {
   const dfsnettside = () => {
@@ -21,14 +22,20 @@ export default function Home() {
             <h1 className="home-element">FRIVILLIGE</h1>
             <h1 className="home-element">SKYTTERVESEN</h1>
           </div>
-        <Image onClick={dfsnettside} className="w-[450px] hover:scale-105 active:scale-90 duration-300" src={dfslogo} alt="dfslogo"></Image>
+        <Image onClick={dfsnettside} className="w-[350px] hover:scale-105 active:scale-90 duration-300" src={dfslogo} alt="dfslogo"></Image>
       
         </div>
       </header>
       
 
-      <InfiniteScroll />
-      <SisteNyttSlider />
+      <AnimateIn>
+        <InfiniteScroll />
+      </AnimateIn>
+
+      <AnimateIn>
+        <SisteNyttSlider />
+      </AnimateIn>
+
       <section className="w-screen h-screen">
 
       </section>
