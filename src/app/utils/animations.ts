@@ -1,5 +1,4 @@
 import gsap from "gsap";
-import { useInView } from 'react-intersection-observer';
 
 export const animateHomeIn = () => {
     const homeElement = document.querySelectorAll('.home-element');
