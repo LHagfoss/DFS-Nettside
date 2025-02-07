@@ -1,12 +1,14 @@
 "use client";
 
 import Image from "next/image"
+import Link from "next/link";
+import { useEffect } from "react";
 
 import { animateHomeIn } from "@/app/utils/animations";
 
-import logoIcon from "@/public/logo.svg"
-import { useEffect } from "react";
-import Link from "next/link";
+import logoIcon from "@/public/ukrlogo.png"
+// import logoIcon2 from "@/public/logo.svg"
+
 
 export default function Navbar() {
     
@@ -20,12 +22,13 @@ export default function Navbar() {
                 <div className="flex items-center">
                     <div className="flex-shrink-0">
                         {/* Logo placeholder */}
-                        <Link href="/hjem"><Image src={logoIcon} alt={logoIcon.src} className="w-12 h-12"/></Link>
+                        <Link href="/hjem"><Image src={logoIcon} alt={logoIcon.src} className="w-fit h-12 object-cover"/></Link>
+                        {/* <Link href="/hjem"><Image src={logoIcon2} alt={logoIcon2.src} className="w-fit h-12 object-cover"/></Link> */}
                     </div>
                 </div>
                 <div className="flex items-center space-x-4">
-                    <button className="text-white hover:bg-indigo-600 px-3 py-2 rounded-md text-sm font-bold bg-indigo-800 ">VIS ENHETER</button>
-                    <button className="bg-white text-indigo-700 hover:bg-indigo-100 px-4 py-2 rounded-md text-sm font-bold">LOGG INN</button>
+                    <button className="text-white hover:bg-indigo-600 px-3 py-2 rounded-md text-sm font-bold bg-indigo-800 uppercase">Om Oss</button>
+                    <button className="bg-white text-indigo-700 hover:bg-indigo-100 px-4 py-2 rounded-md text-sm font-bold uppercase">Kontakt Oss</button>
                 </div>
             </div>
 
