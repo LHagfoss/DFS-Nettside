@@ -25,106 +25,11 @@ nav {
   z-index: 999;
 }
 
-.menu-bar, 
-.menu-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  display: flex;
-  justify-content: space-between;
-  z-index: 1;
+
+.custom-outline{
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #002f67;
 }
-
-.menu-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 2;
-  display: flex;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
-}
-
-.menu-close-icon {
-  flex: 1;
-  display: flex;
-  align-items: flex-end;
-  cursor: pointer;
-}
-
-.menu-copy {
-  flex: 4;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.menu-preview {
-  flex: 4;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-}
-.menu-link-item {
-  width: max-content;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-}
-
-.menu-link-item-holder {
-  position: relative;
-}
-
-.menu-link-item-holder link {
-  color: #f4f4f5;
-  font-size: 80px;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 85%;
-}
-
-.menu-info {
-  display: flex;
-}
-
-.menu-info-col {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.menu-overlay-bar {
-  position: absolute;
-  top: 0.5rem;
-  left: 1.25rem;
-  right: 1.25rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* For smaller screens (Making websites responsive sucks */
-@media (max-width: 900px) {
-  .menu-close-icon {
-      display: none;
-  }
-
-  .menu-copy {
-      padding-top: 8em;
-  }
-
-  .menu-link-item-holder a {
-      font-size: 60px;
-  }
-
-  .menu-info {
-      flex-direction: column;
-      gap: 1em;
-  }
-}
-
 .slider {
   height: var(--height);
   position: relative;

@@ -18,12 +18,11 @@ export default function Home() {
       <header className="w-screen h-screen flex justify-center items-center">
         <div className="container flex flex-row justify-between items-center">
           <div className="text-[#002f67] flex flex-col leading-[90%] text-4xl sm:text-8xl md:font-bold">
-            <h1 className="home-element">NORGES</h1> 
-            <h1 className="home-element">CUPPEN</h1>
-            <h1 className="home-element">SØRLANDET</h1>
-            <h1 className="home-element">2025</h1>
+            <h1 className="home-element">NORGES<span className="text-transparent outline-dotted custom-outline  ">CUPEN</span></h1>
+            <h1 className="home-element text-7xl">SØRLANDET 2025</h1>
+            <h1 className=" text-2xl sm:text-4xl">29. mai - 01.juni</h1>
           </div>
-        <Image onClick={dfsnettside} className="w-[350px] hover:scale-105 active:scale-90 duration-300" src={dfslogo} alt="dfslogo"></Image>
+        <Image onClick={dfsnettside} className="w-[320px] hover:scale-105 active:scale-90 duration-300" src={dfslogo} alt="dfslogo"></Image>
       
         </div>
       </header>
