@@ -9,7 +9,7 @@ export default function Resultater() {
             <h1 className="text-2xl sm:text-5xl leading-[90%] mb-4 flex font-bold">RESULTATER</h1>
         </div>
         <div className="w-screen h-12 bg-indigo-400 flex justify-center text-lg sm:text-2xl leading-[90%] items-center">
-            <div className=" flex justify-between container">
+            <div className=" flex justify-between container text-white">
             <p className="flex-1">Elverum</p>
             <p className="flex-1 flex justify-center">Åsheim</p>
             <p className="flex-1 flex justify-end">Lismarken</p>
@@ -32,7 +32,7 @@ export default function Resultater() {
             </div>
             
         <div className="w-screen h-12 bg-indigo-400 flex justify-center text-lg sm:text-2xl leading-[90%] items-center">
-            <div className="flex items-center">
+            <div className="flex items-center text-white">
             <a href="https://mittdfs.no/hovedside/aktuelt-na/arrangementer-og-resultater/nc-bane-arkiv/nc-sammenlagt/" className="text-1xl sm:text-2xl leading-[90%] mb-4 flex font-bold">SAMLET RESULTAT</a>
             </div>
         </div>
