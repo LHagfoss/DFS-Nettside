@@ -1,6 +1,5 @@
 import { StaticImageData } from "next/image";
 import Image from "next/image";
-import { useState } from "react";
 
 import logo1 from "@/public/logo1.png"
 import logo2 from "@/public/logo2.png"
@@ -31,22 +30,15 @@ export default function InfiniteScroll() {
 };
 
 const Card = ({contentNumber, imageSrc, link}: {contentNumber: number, imageSrc: StaticImageData, link: string}) => {
-    const [isHovered, setIsHovered] = useState(false);
+    
     const handleClick=() => {
         window.open(link, '_blank');
     }
     return (
             <div onClick={handleClick}
-            className="scroll-item flex justify-center items-center"
+            className="scroll-item flex justify-center items-center hover:scale-125 transform transition-transform duration-300"
             style={{ '--pos': contentNumber } as React.CSSProperties}
-        >   <button 
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-                style={{ 
-                    transform: isHovered ? 'scale(1.1)' : 'scale(1)',
-                    transition: 'transform 0.3s ease-in-out'
-                }}
-            >
+        >   <button>
                 <Image src={imageSrc} alt={imageSrc.src} className="object-cover aspect-square" />
             </button>
         </div>
