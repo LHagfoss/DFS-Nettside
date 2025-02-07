@@ -20,6 +20,7 @@ export default function Home() {
           <div className="text-[#002f67] flex flex-col leading-[90%] text-4xl sm:text-8xl md:font-bold">
             <h1 className="home-element">NORGES</h1> 
             <h1 className="home-element">CUPPEN</h1>
+            <h1 className="home-element">SØRLANDET</h1>
             <h1 className="home-element">2025</h1>
           </div>
         <Image onClick={dfsnettside} className="w-[350px] hover:scale-105 active:scale-90 duration-300" src={dfslogo} alt="dfslogo"></Image>
