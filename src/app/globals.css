@@ -25,6 +25,28 @@ nav {
   z-index: 999;
 }
 
+.custom-rotate {
+  animation: infiniteRotate 50s linear infinite;
+  animation-delay: 2s;
+}
+
+.custom-rotate:hover {
+  scale: 1.1;
+  transition: all 0.3s ease-in-out;
+}
+
+.custom-rotate:active {
+  scale: 0.9;
+  transition: all 0.3s ease-in-out;
+}
+
+@keyframes infiniteRotate {
+  0% {
+    transform: rotateZ(0deg)  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
 
 .custom-outline{
   -webkit-text-stroke-width: 2px;

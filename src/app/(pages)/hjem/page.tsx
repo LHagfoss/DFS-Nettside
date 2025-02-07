@@ -22,7 +22,7 @@ export default function Home() {
             <h1 className="home-element text-7xl">SØRLANDET 2025</h1>
             <h1 className=" text-2xl sm:text-4xl">29. mai - 01.juni</h1>
           </div>
-        <Image onClick={dfsnettside} className="w-[320px] hover:scale-105 active:scale-90 duration-300" src={dfslogo} alt="dfslogo"></Image>
+        <Image onClick={dfsnettside} className="w-[320px] custom-rotate" src={dfslogo} alt="dfslogo"></Image>
       
         </div>
       </header>
