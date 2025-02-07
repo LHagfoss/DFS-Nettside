@@ -1,5 +1,8 @@
 
 export default function Resultater() {
+    const elverumLink = "https://www.livevisning.com/elverum/NC%20Elverum%202024%201%20runde%20bane/index1.html#"
+    const åsheimLink = "https://res.megalink.no/event/asheim-skl/StartFrame.htm"
+    const lismarkenLink = "https://livevisning.com/lismarken/NC_Bane_Lismarken_2024/index1.html#"
     return(
         <div className=" w-screen flex flex-col items-center p-14">
         <div className=" flex justify-between container">
@@ -15,9 +18,9 @@ export default function Resultater() {
         </div>
         <div className="w-screen h-12 flex justify-center text-lg sm:text-2xl leading-[90%] items-center">
                 <div className=" flex justify-between container">
-                <a href="https://www.livevisning.com/elverum/NC%20Elverum%202024%201%20runde%20bane/index1.html#" className="flex-1">Resultat</a>
-                <a href="https://res.megalink.no/event/asheim-skl/StartFrame.htm" className="flex-1 flex justify-center">Resultat</a>
-                <a href ="https://livevisning.com/lismarken/NC_Bane_Lismarken_2024/index1.html#"className="flex-1 flex justify-end">Resultat</a>
+                <a href={elverumLink} className="flex-1">Resultat</a>
+                <a href={åsheimLink} className="flex-1 flex justify-center">Resultat</a>
+                <a href ={lismarkenLink}className="flex-1 flex justify-end">Resultat</a>
                 </div>
             </div>
 
