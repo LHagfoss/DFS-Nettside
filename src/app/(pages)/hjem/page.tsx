@@ -6,6 +6,7 @@ import SisteNyttSlider from "@/components/siste-nytt-slider";
 import Image from "next/image";
 import dfslogo from "@/public/logoSecond.png";
 import AnimateIn from "@/components/animate-in";
+import Footer from "@/components/footer/footer";
 
 export default function Home() {
   const dfsnettside = () => {
@@ -36,9 +37,7 @@ export default function Home() {
         <SisteNyttSlider />
       </AnimateIn>
 
-      <section className="w-screen h-screen">
-
-      </section>
-    </>
-  );
+      <Footer />
+      </>
+    );
 };
