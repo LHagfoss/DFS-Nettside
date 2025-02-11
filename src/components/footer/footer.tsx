@@ -39,8 +39,8 @@ export default function Footer() {
 
         </div>
 
-        <div className="w-full ">Laget av <a href="#" className="text-blue-700 hover:underline">LHagfoss</a>, <a href="#" className="text-blue-700 hover:underline">
-                MelyGuy</a> og <a href="#" className="text-blue-700 hover:underline">07Siddi</a>
+        <div className="w-full ">Laget av <a href="https://lhagfoss.com/" target="blank_" className="text-blue-700 hover:underline">LHagfoss</a>, <a href="https://testportfolio-gilt.vercel.app/" target="blank_" className="text-blue-700 hover:underline">
+                MelyGuy</a> og <a href="https://github.com/07Siddi" target="blank_" className="text-blue-700 hover:underline">07Siddi</a>
         </div>
 
         <div className="w-full h-[1px] bg-black my-2">
