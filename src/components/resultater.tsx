@@ -12,7 +12,7 @@ export default function Resultater() {
             <div className=" flex justify-between container text-white">
             <p className="flex-1">Lyngdal</p>
             <p className="flex-1 flex justify-center">Søgne</p>
-            <p className="flex-1 flex justify-end">Kristiansand</p>
+            <p className="flex-1 flex justify-end">Kristiansand og Omegn</p>
             </div>
 
         </div>
