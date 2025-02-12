@@ -4,7 +4,6 @@ import dfs from "@/public/dfslogo.png"
 import pil from "@/public/pil.png"
 import youtubeImage from "@/public/youtube.png"
 import linkedinImage from "@/public/linkedin.png"
-import {useEffect} from "react"
 
 export default function Footer() {
     const tiltoppen = () => {
