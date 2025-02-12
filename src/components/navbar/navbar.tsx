@@ -36,21 +36,21 @@ export default function Navbar() {
             </div>
 
             {/* Mobile menu */}
-            {isMenuOpen && (
-                <nav className="fixed w-screen z-10 bg-indigo-700 top-16 left-0 flex flex-col justify-center items-center">
+            <div className={` w-screen z-10 bg-indigo-700 left-0 overflow-hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-[500px]' : 'max-h-0'}`}>
+                <nav className="flex flex-col justify-center items-center">
                     <div className="container py-4 flex flex-col gap-2">
-                        <Link href="/resultater" className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm">Resultater</Link>
-                        <Link href="/stevneinfo" className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm">Stevneinfo</Link>
-                        <Link href="https://mittdfs.no/pamelding/" target="_blank" className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm">Påmelding</Link>
-                        <Link href="/arrangorene" className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm">Arrangørene</Link>
-                        <Link href="/veibeskrivelse" className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm">Veibeskrivelse</Link>
-                        <Link href="/overnatting" className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm">Overnatting</Link>
-                        <Link href="/aktiviteter" className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm">Aktiviteter</Link>
-                        <Link href="https://skyttertidende.no/norgescup-1681983756/sections/29717/articles" target="blank_" className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm">NC</Link>
-                        <Link href="/sponsorer" className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm">Sponsorer</Link>
+                        <Link href="/resultater" onClick={() => setIsMenuOpen(false)} className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm">Resultater</Link>
+                        <Link href="/stevneinfo" onClick={() => setIsMenuOpen(false)} className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm">Stevneinfo</Link>
+                        <Link href="https://mittdfs.no/pamelding/" target="_blank" onClick={() => setIsMenuOpen(false)} className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm">Påmelding</Link>
+                        <Link href="/arrangorene" onClick={() => setIsMenuOpen(false)} className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm">Arrangørene</Link>
+                        <Link href="/veibeskrivelse" onClick={() => setIsMenuOpen(false)} className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm">Veibeskrivelse</Link>
+                        <Link href="/overnatting" onClick={() => setIsMenuOpen(false)} className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm">Overnatting</Link>
+                        <Link href="/aktiviteter" onClick={() => setIsMenuOpen(false)} className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm">Aktiviteter</Link>
+                        <Link href="https://skyttertidende.no/norgescup-1681983756/sections/29717/articles" target="blank_" onClick={() => setIsMenuOpen(false)} className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm">NC</Link>
+                        <Link href="/sponsorer" onClick={() => setIsMenuOpen(false)} className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm">Sponsorer</Link>
                     </div>
                 </nav>
-            )}
+            </div>
 
 
             <div className=" hidden w-full sm:flex justify-center items-center bg-indigo-100">
