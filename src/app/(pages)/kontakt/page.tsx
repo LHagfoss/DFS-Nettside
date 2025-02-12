@@ -4,13 +4,14 @@ import logoLyngdal from '@/public/logo1.png';
 import logoSogne from '@/public/logo4.png';
 import logoLaudal from '@/public/logo3.png';
 import logoKristiansand from '@/public/logo2.png';
+import Footer from "@/components/footer";
 
 export default function Kontakt() {
   return (
     <main className="w-full h-screen p-10 pt-44 bg-gray-100 flex justify-center items-center">
         <title>DFS-Nettside | Kontakt Oss</title>
         <div className="container grid grid-cols-2 gap-4 h-full">
-            <div className="contact-person bg-blue-100 p-10 rounded-3xl shadow mb-4 h-full">
+            <div className="contact-person bg-zinc-100 p-10 rounded-3xl shadow mb-4 h-full">
                 <Image src={logoLyngdal} alt="Lyngdal Logo" width={100} height={100} />
                 <h1 className="text-2xl font-bold">Lyngdal Skyttelag</h1>
                 <p className="text-gray-600">Veibeskrivelse: Skytebaneveien 1, Lyngdal, merket fra rundkjøring på E39.</p>
@@ -19,7 +20,7 @@ export default function Kontakt() {
                 <p className="text-gray-600">Kontakt tlf: 905 84 226</p>
                 <p className="text-gray-600">Email: lyngdal@skytterlag.no</p>
             </div>
-            <div className="contact-person bg-blue-100 p-10 rounded-3xl shadow mb-4 h-full">
+            <div className="contact-person bg-zinc-100 p-10 rounded-3xl shadow mb-4 h-full">
                 <Image src={logoSogne} alt="Sogne Logo" width={100} height={100} />
                 <h1 className="text-2xl font-bold">Søgne Skyttelag</h1>
                 <p className="text-gray-600">Veibeskrivelse: Årdalen, merket vei fra Shell Lonielier langs E39.</p>
@@ -28,7 +29,7 @@ export default function Kontakt() {
                 <p className="text-gray-600">Kontakt tlf: 901 14 880</p>
                 <p className="text-gray-600">Email: sogne@skytterlag.no</p>
             </div>
-            <div className="contact-person bg-blue-100 p-10 rounded-3xl shadow mb-4 h-full">
+            <div className="contact-person bg-zinc-100 p-10 rounded-3xl shadow mb-4 h-full">
                 <Image src={logoLaudal} alt="Laudal Logo" width={100} height={100} />
                 <h1 className="text-2xl font-bold">Laudal Skyttelag</h1>
                 <p className="text-gray-600">Veibeskrivelse: Ta Fv455 fra Mandalskrysset på E39, Vestheia 1112, 4534 Marnadal, merket fra Fv455.</p>
@@ -37,7 +38,7 @@ export default function Kontakt() {
                 <p className="text-gray-600">Kontakt tlf: 480 85 744</p>
                 <p className="text-gray-600">Email: laudal@skytterlag.no</p>
             </div>
-            <div className="contact-person bg-blue-100 p-10 rounded-3xl shadow mb-4 h-full">
+            <div className="contact-person bg-zinc-100 p-10 rounded-3xl shadow mb-4 h-full">
                 <Image src={logoKristiansand} alt="Kristiansand og Omegn Logo" width={100} height={100} />
                 <h1 className="text-2xl font-bold">Kristiansand og Omegn Skyttelag</h1>
                 <p className="text-gray-600">Veibeskrivelse: Østre Ålefjærvei 261, Kristiansand, merket fra Timeneskrysset langs E18.</p>
@@ -47,6 +48,7 @@ export default function Kontakt() {
                 <p className="text-gray-600">Email: kom@skytterlag.no</p>
             </div>
         </div>
+        <Footer />
     </main>
   );
 };
