@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import norgescupen from "@/public/logoSecond.png"
 import dfs from "@/public/dfslogo.png"
