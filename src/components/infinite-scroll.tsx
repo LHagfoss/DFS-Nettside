@@ -9,7 +9,7 @@ import logo4 from "@/public/logo4.png"
 export default function InfiniteScroll() {
     return (
         
-        <div className="w-screen flex justify-center items-center flex-col ">
+        <div className="w-full flex justify-center items-center flex-col ">
             <div className="container flex justify-center items-center slider-container">
                 <div className="slider w-[200vw] flex gap-5 items-center text-xl leading-none">
                     <Card contentNumber={1} imageSrc={logo1} link="https://dfsgrasrot.no/soegne-skytterlag" />

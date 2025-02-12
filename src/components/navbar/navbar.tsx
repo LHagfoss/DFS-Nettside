@@ -17,7 +17,7 @@ export default function Navbar() {
     }, [])
 
     return (
-        <nav className="fixed bg-indigo-700 w-screen flex flex-col justify-center items-center">
+        <nav className="fixed bg-indigo-700 w-screen left-0 top-0 flex flex-col justify-center items-center">
             <div className="container flex justify-between items-center py-3">
                 <div className="flex items-center">
                     <div className="flex-shrink-0">
@@ -32,8 +32,8 @@ export default function Navbar() {
                 </div>
             </div>
 
-            <div className="w-screen flex justify-center items-center bg-indigo-100">
-                <div className="container flex justify-between item-center py-3 font-bold uppercase">
+            <div className="w-full flex justify-center items-center bg-indigo-100">
+                <div className="container flex flex-wrap justify-between item-center py-3 font-bold uppercase">
                     <Link href="/resultater" className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">Resultater</Link>
                     <Link href="/stevneinfo" className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">Stevneinfo</Link>
                     <Link href="https://mittdfs.no/pamelding/?293143__dateTo=2025-03-11&293143__dateFrom=2025-02-11&293143__tab=all" target="blank_" className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">Påmelding</Link>

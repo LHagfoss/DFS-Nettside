@@ -105,7 +105,7 @@ export default function SisteNyttSlider() {
 
   return (
     <>
-      <div className="w-screen flex flex-col items-center justify-center p-5 sm:p-0">
+      <div className="w-full flex flex-col items-center justify-center p-5 sm:p-0">
         <h1 className="container text-5xl text-[--text] font-bold mb-4">SISTE NYTT</h1>
         <div className="container relative overflow-hidden bg-indigo-400 rounded-3xl p-8">
           <div className="flex items-stretch justify-between gap-4">
