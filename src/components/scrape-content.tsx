@@ -14,12 +14,34 @@ interface ScrapedDataItem {
 
 export default function ScrapedData() {
   const { data, error } = useSWR<ScrapedDataItem[]>('/api/scrape', fetcher, { 
-    refreshInterval: 60000,
-    fallbackData: []
+    refreshInterval: 60000
   });
 
   if (error) return <div>Failed to load</div>;
-  if (!data) return <div>Loading...</div>;
+  if (!data) return (
+    <div className="flex flex-wrap justify-center gap-4">
+      {[1, 2, 3].map((i) => (
+        <div key={i} className="max-w-md rounded overflow-hidden shadow-lg bg-white m-4 p-6 flex flex-col w-full">
+          <div className="h-64 overflow-hidden bg-gray-200 animate-pulse rounded-lg" />
+          <div className="px-4 py-6 flex-1">
+            <div className="h-7 bg-gray-200 animate-pulse rounded-full mb-4 w-3/4" />
+            <div className="space-y-3">
+              <div className="h-4 bg-gray-200 animate-pulse rounded-full" />
+              <div className="h-4 bg-gray-200 animate-pulse rounded-full w-5/6" />
+              <div className="h-4 bg-gray-200 animate-pulse rounded-full w-4/6" />
+            </div>
+          </div>
+          <div className="px-4 pb-4">
+            <div className="flex gap-2 mb-4">
+              <div className="h-7 bg-gray-200 animate-pulse rounded-full w-20" />
+              <div className="h-7 bg-gray-200 animate-pulse rounded-full w-24" />
+            </div>
+            <div className="h-12 bg-gray-200 animate-pulse rounded-xl w-full" />
+          </div>
+        </div>
+      ))}
+    </div>
+  );
 
   console.log('Fetched Data:', data);
 

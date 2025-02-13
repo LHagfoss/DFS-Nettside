@@ -6,7 +6,7 @@ import InfiniteScroll from "@/components/infinite-scroll";
 import Image from "next/image";
 import dfslogo from "@/public/logoSecond.png";
 import AnimateIn from "@/components/animate-in";
-import Nyheter from "@/components/nyheter-2025";
+import ScrapeData from "@/components/scrape-content";
 
 export default function Home() {
   const dfsnettside = () => {
@@ -32,7 +32,7 @@ export default function Home() {
         </AnimateIn>
 
         <AnimateIn>
-          <Nyheter />
+          <ScrapeData />
         </AnimateIn>
 
        {/* <AnimateIn>

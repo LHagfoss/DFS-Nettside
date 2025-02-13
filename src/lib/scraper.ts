@@ -19,20 +19,20 @@ async function scrapeData(): Promise<ScrapedDataItem[]> {
       'Cookie': 'cookie_consent=true'
     }
   });
-  
+
   const $ = load(data);
   const scrapedData: ScrapedDataItem[] = [];
 
   $('article.article-preview').each((index, element) => {
     const $el = $(element);
-    const articleUrl = $el.find('a.article-preview__link').attr('href');
-    
+    const articleUrl = $el.find('a.article-previewlink').attr('href');
+
     scrapedData.push({
-      title: $el.find('.article-preview__title span').text().trim(),
-      content: $el.find('.article-preview__text p').first().text().trim(),
-      imageUrl: $el.find('.article-preview__image img').attr('src') || '',
-      author: $el.find('.article-preview__author a').text().trim(),
-      date: $el.find('.article-preview__date').text().trim(),
+      title: $el.find('.article-previewtitle span').text().trim(),
+      content: $el.find('.article-previewtext p').first().text().trim(),
+      imageUrl: $el.find('.article-previewimage img').attr('src') || '',
+      author: $el.find('.article-previewauthor a').text().trim(),
+      date: $el.find('.article-previewdate').text().trim(),
       articleUrl: articleUrl ? `https://dfs.no${articleUrl}` : ''
     });
   });

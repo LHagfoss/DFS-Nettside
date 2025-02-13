@@ -22,7 +22,7 @@ export async function GET() {
         'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=59'
       }
     });
-  }
+  };
 
   try {
     const axiosData = await fetchWithAxios();
