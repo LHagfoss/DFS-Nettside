@@ -43,6 +43,13 @@ export default function Navbar() {
                 <nav className="flex flex-col justify-center items-center">
                     <div className="container py-4 flex flex-col gap-2">
                         <Link 
+                            href="/livestream" 
+                            onClick={() => setIsMenuOpen(false)} 
+                            className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm"
+                        >
+                            Live
+                        </Link>
+                        <Link 
                             href="/resultater" 
                             onClick={() => setIsMenuOpen(false)} 
                             className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm"
@@ -150,6 +157,7 @@ export default function Navbar() {
 
             <div className=" hidden w-full sm:flex justify-center items-center bg-indigo-100">
                 <div className="container flex flex-wrap justify-between item-center py-3 font-bold uppercase">
+                <Link href="/livestream" className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">Live</Link>
                     <Link href="/resultater" className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">Resultater</Link>
                     <Link href="/stevneinfo" className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">Stevneinfo</Link>
                     <Link 

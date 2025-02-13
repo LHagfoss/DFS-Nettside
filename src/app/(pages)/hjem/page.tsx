@@ -6,7 +6,6 @@ import SisteNyttSlider from "@/components/siste-nytt-slider";
 import Image from "next/image";
 import dfslogo from "@/public/logoSecond.png";
 import AnimateIn from "@/components/animate-in";
-import Footer from "@/components/footer";
 import Nyheter from "@/components/nyheter-2025";
 
 export default function Home() {
@@ -40,9 +39,6 @@ export default function Home() {
           <SisteNyttSlider />
         </AnimateIn>
 
-        <AnimateIn>
-          <Footer />
-        </AnimateIn>
       </main>
     );
 };

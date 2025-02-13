@@ -4,7 +4,7 @@ import logoLyngdal from '@/public/logo1.png';
 import logoSogne from '@/public/logo4.png';
 import logoLaudal from '@/public/logo3.png';
 import logoKristiansand from '@/public/logo2.png';
-import Footer from "@/components/footer";
+
 
 export default function Kontakt() {
   return (
@@ -48,7 +48,7 @@ export default function Kontakt() {
                 <p className="text-gray-600">Email: kom@skytterlag.no</p>
             </div>
         </div>
-        <Footer />
+
     </main>
   );
 };
