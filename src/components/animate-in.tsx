@@ -22,7 +22,7 @@ const AnimateIn: React.FC<AnimateInProps> = ({
   ...props
 }) => {
   const [inView, setInView] = useState<boolean>(false);
-  const ref = useRef<HTMLElement | null>(null);
+  const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
