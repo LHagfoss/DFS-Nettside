@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useCallback } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import gsap from 'gsap'
 import Image from 'next/image'
 
@@ -74,11 +74,11 @@ export default function SisteNyttSlider() {
     return () => window.removeEventListener('resize', checkScreenSize)
   }, [])
 
-  const nextSlide = useCallback(() => {
+  const nextSlide = () => {
     const nextIndex = currentIndex === cards.length - cardsPerView ? 0 : currentIndex + 1
     animateSlide(nextIndex)
     setCurrentIndex(nextIndex)
-  }, [currentIndex, cardsPerView, cards.length]);
+  }
 
   const prevSlide = () => {
     const prevIndex = currentIndex === 0 ? cards.length - cardsPerView : currentIndex - 1
@@ -102,7 +102,7 @@ export default function SisteNyttSlider() {
     }, 5000);
 
     return () => clearInterval(timer);
-  }, [nextSlide]);
+  }, []);
 
   return (
     <>

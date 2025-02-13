@@ -2,7 +2,7 @@
 
 import React from "react";
 import InfiniteScroll from "@/components/infinite-scroll";
-import SisteNyttSlider from "@/components/siste-nytt-slider";
+// import SisteNyttSlider from "@/components/siste-nytt-slider";
 import Image from "next/image";
 import dfslogo from "@/public/logoSecond.png";
 import AnimateIn from "@/components/animate-in";
@@ -35,9 +35,9 @@ export default function Home() {
           <Nyheter />
         </AnimateIn>
 
-        <AnimateIn>
+       {/* <AnimateIn>
           <SisteNyttSlider />
-        </AnimateIn>
+        </AnimateIn>*/}
 
       </main>
     );

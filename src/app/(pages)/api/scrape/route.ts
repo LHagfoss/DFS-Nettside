@@ -49,8 +49,13 @@ export async function GET() {
   } catch (error) {
     console.error('Scraping failed:', error);
     return NextResponse.json(
-      { error: 'Failed to fetch data' },
-      { status: 500 }
+      [],
+      { 
+        status: 500,
+        headers: {
+          'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=59'
+        }
+      }
     );
   }
 }

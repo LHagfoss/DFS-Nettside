@@ -13,22 +13,19 @@ interface ScrapedDataItem {
 }
 
 export default function ScrapedData() {
-  const { data, error } = useSWR<ScrapedDataItem[]>('/api/scrape', fetcher, { refreshInterval: 60000 });
+  const { data, error } = useSWR<ScrapedDataItem[]>('/api/scrape', fetcher, { 
+    refreshInterval: 60000,
+    fallbackData: []
+  });
 
-  if (error) {
-    console.error('Error fetching data:', error);
-    return <div>Failed to load</div>;
-  }
-  if (!data) {
-    console.log('Loading data...');
-    return <div>Loading...</div>;
-  }
+  if (error) return <div>Failed to load</div>;
+  if (!data) return <div>Loading...</div>;
 
   console.log('Fetched Data:', data);
 
   return (
     <div className="flex flex-wrap justify-center gap-4">
-      {data.map((item, index) => (
+      {data?.map((item, index) => (
         <div key={index} className="max-w-md rounded overflow-hidden shadow-lg bg-white m-4 p-6 flex flex-col">
           <div className="h-64 overflow-hidden">
             <Image 

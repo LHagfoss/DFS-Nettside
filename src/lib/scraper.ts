@@ -1,7 +1,16 @@
 import axios from 'axios';
 import { load } from 'cheerio';
 
-async function scrapeData(): Promise<any[]> {
+interface ScrapedDataItem {
+  title: string;
+  content: string;
+  imageUrl: string;
+  author: string;
+  date: string;
+  articleUrl: string;
+}
+
+async function scrapeData(): Promise<ScrapedDataItem[]> {
   const url = 'https://dfs.no/nc-2025-runde-1';
   const { data } = await axios.get<string>(url, {
     headers: {
@@ -12,7 +21,7 @@ async function scrapeData(): Promise<any[]> {
   });
   
   const $ = load(data);
-  const scrapedData: any[] = [];
+  const scrapedData: ScrapedDataItem[] = [];
 
   $('article.article-preview').each((index, element) => {
     const $el = $(element);
