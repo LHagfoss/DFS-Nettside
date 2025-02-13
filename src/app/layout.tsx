@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Grain from "@/components/grain";
 import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 const inter = Inter({
   variable: "--inter",
@@ -34,12 +35,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} antialiased`}
+        className={`${inter.variable} antialiased min-h-[100vh]`}
       >
         <Grain />
         <Navbar />
 
         {children}
+        <Footer />
       </body>
     </html>
   );

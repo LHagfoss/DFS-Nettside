@@ -1,5 +1,5 @@
 import Veibeskrivelse from "@/components/veibeskrivelse";
-import Footer from "@/components/footer";
+
 
 export default function Home(){
     return(
@@ -8,7 +8,7 @@ export default function Home(){
         <title>DFS-Nettside | Veibeskrivelse</title>
         <Veibeskrivelse />
         </main>
-        <Footer />
+
         </>
     )
 }

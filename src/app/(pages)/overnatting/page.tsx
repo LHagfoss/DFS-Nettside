@@ -1,3 +1,4 @@
+
 import Overnatting from "@/components/overnatting";
 
 export default function Home(){
