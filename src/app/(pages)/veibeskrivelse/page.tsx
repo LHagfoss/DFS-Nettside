@@ -1,5 +1,5 @@
 import Veibeskrivelse from "@/components/veibeskrivelse";
-import Footer from "@/components/footer/footer";
+import Footer from "@/components/footer";
 
 export default function Home(){
     return(
