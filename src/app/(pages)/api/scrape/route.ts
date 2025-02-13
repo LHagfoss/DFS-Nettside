@@ -5,12 +5,12 @@ let lastFetchTime: number = 0;
 
 export async function GET() {
   const now = Date.now();
-  const oneHour = 60 * 60 * 1000;
+  const fiveMinutes = 1 * 60 * 1000;
 
-  if (cachedData && now - lastFetchTime < oneHour) {
+  if (cachedData && now - lastFetchTime < fiveMinutes) {
     return NextResponse.json(cachedData, {
       headers: {
-        'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=59'
+        'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=59'
       }
     });
   }
@@ -23,7 +23,7 @@ export async function GET() {
       lastFetchTime = now;
       return NextResponse.json(cachedData, {
         headers: {
-          'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=59'
+          'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=59'
         }
       });
     }
@@ -34,7 +34,7 @@ export async function GET() {
 
     return NextResponse.json(cachedData, {
       headers: {
-        'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=59'
+        'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=59'
       }
     });
   } catch (error) {

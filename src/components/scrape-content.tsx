@@ -3,7 +3,7 @@ import useSWR from 'swr';
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export default function ScrapedData() {
-  const { data, error } = useSWR<any[]>('/api/scrape', fetcher, { refreshInterval: 3600000 });
+  const { data, error } = useSWR<any[]>('/api/scrape', fetcher, { refreshInterval: 60000 });
 
   if (error) {
     console.error('Error fetching data:', error);
@@ -34,7 +34,7 @@ export default function ScrapedData() {
               <span className="inline-block bg-gray-200 rounded-full px-4 py-1 text-base font-semibold text-gray-700">{item.author}</span>
               <span className="inline-block bg-gray-200 rounded-full px-4 py-1 text-base font-semibold text-gray-700">{item.date}</span>
             </div>
-            <a href={item.articleUrl} className="w-full flex justify-center text-white bg-blue-500 border-0 py-3 px-10 focus:outline-none hover:bg-blue-600 rounded-xl text-xl transition-colors">
+            <a href={item.articleUrl} target="_blank" className="w-full flex justify-center text-white bg-blue-500 border-0 py-3 px-10 focus:outline-none hover:bg-blue-600 rounded-xl text-xl transition-colors">
               Les mer
             </a>
           </div>
