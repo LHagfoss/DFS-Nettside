@@ -6,8 +6,8 @@ export default function Veibeskrivelse() {
         <div className="w-screen flex flex-col justify-center items-center mt-52">
             <div className="container gap-10 flex justify-between items-start">
                         
-                        <Image src={sorlandet} alt="sorlandetlogo" className="w-1/2 object-cover"/>
-                <div className="flex-col flex w-1/2">                    
+                        <Image src={sorlandet} alt="sorlandetlogo" className="w-1/3 object-cover ml-20"/>
+                <div className="flex-col flex">                    
                         
                         <div className="flex flex-col text-3xl text-[#002f67] font-bold ">En kompakt stevnehelg på Sørlandet</div>
                         <div className="flex flex-col mt-3 text-2xl font-medium text-[#002f67]">Skytterlagene i Lyngdal, Laudal, Søgne og Kristiansand ønsker velkommen til en langhelg på Sørlandet med relativt korte avstander. Alle stevnene ligger relativt nære E39/E18 med en liten avstikker for å skyte de to rundene med stang og felthurting som går i Laudal.</div>   
