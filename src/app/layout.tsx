@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Grain from "@/components/grain";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
@@ -11,17 +10,17 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "DFS-Nettside",
+  title: "NC 2025 - Runde 1 - Det frivillige Skyttervesen",
   description: "Laget av Lucas, Odin og Sidney.",
   openGraph: {
-    title: "DFS-Nettside",
+    title: "NC 2025 - Runde 1 - Det frivillige Skyttervesen",
     description: "Laget av Lucas, Odin og Sidney.",
     images: [
       {
         url: "/opengraph.png",
         width: 1280,
         height: 720,
-        alt: "DFS-Nettside",
+        alt: "NC 2025 - Runde 1 - Det frivillige Skyttervesen",
       },
     ],
   },
@@ -37,10 +36,10 @@ export default function RootLayout({
       <body
         className={`${inter.variable} antialiased min-h-[100vh]`}
       >
-        <Grain />
         <Navbar />
 
         {children}
+
         <Footer />
       </body>
     </html>

@@ -10,6 +10,7 @@ interface AnimateInProps {
   delay?: number;
   duration?: number;
   once?: boolean;
+  className?: string;
 }
 
 const AnimateIn: React.FC<AnimateInProps> = ({
@@ -19,6 +20,7 @@ const AnimateIn: React.FC<AnimateInProps> = ({
   delay = 0,
   duration = 1.5,
   once = true,
+  className = "",
   ...props
 }) => {
   const [inView, setInView] = useState<boolean>(false);
@@ -41,6 +43,7 @@ const AnimateIn: React.FC<AnimateInProps> = ({
 
   return (
     <motion.div
+      className={className}
       ref={ref}
       initial={initial}
       animate={inView ? animate : initial}

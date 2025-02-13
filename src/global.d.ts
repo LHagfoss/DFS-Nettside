@@ -8,4 +8,8 @@ declare module '@sparticuz/chromium' {
 declare module 'puppeteer-core' {
   import { Browser, Page } from 'puppeteer-core';
   export { Browser, Page };
-} 
+}
+
+declare module 'cheerio' {
+  export * from 'cheerio';
+}

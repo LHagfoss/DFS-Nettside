@@ -17,7 +17,7 @@ const nextConfig: NextConfig = {
       }
     ]
   },
-  serverExternalPackages: ['puppeteer-core', '@sparticuz/chromium']
+  serverExternalPackages: ['puppeteer-core', '@sparticuz/chromium', 'cheerio'],
 };
 
 export default nextConfig;
