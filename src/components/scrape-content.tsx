@@ -1,9 +1,19 @@
 import useSWR from 'swr';
+import Image from 'next/image';
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
+interface ScrapedDataItem {
+  title: string;
+  imageUrl: string;
+  content: string;
+  author: string;
+  date: string;
+  articleUrl: string;
+}
+
 export default function ScrapedData() {
-  const { data, error } = useSWR<any[]>('/api/scrape', fetcher, { refreshInterval: 60000 });
+  const { data, error } = useSWR<ScrapedDataItem[]>('/api/scrape', fetcher, { refreshInterval: 60000 });
 
   if (error) {
     console.error('Error fetching data:', error);
@@ -21,7 +31,13 @@ export default function ScrapedData() {
       {data.map((item, index) => (
         <div key={index} className="max-w-md rounded overflow-hidden shadow-lg bg-white m-4 p-6 flex flex-col">
           <div className="h-64 overflow-hidden">
-            <img className="w-full h-full object-cover" src={item.imageUrl} alt={item.title} />
+            <Image 
+              className="w-full h-full object-cover" 
+              src={item.imageUrl} 
+              alt={item.title}
+              width={400}
+              height={400}
+            />
           </div>
           <div className="px-4 py-6 flex-1">
             <div className="font-bold text-2xl mb-3 min-h-[64px]">{item.title}</div>

@@ -1,5 +1,6 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 import gsap from 'gsap'
+import Image from 'next/image'
 
 export default function SisteNyttSlider() {
   const cards = [
@@ -73,11 +74,11 @@ export default function SisteNyttSlider() {
     return () => window.removeEventListener('resize', checkScreenSize)
   }, [])
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     const nextIndex = currentIndex === cards.length - cardsPerView ? 0 : currentIndex + 1
     animateSlide(nextIndex)
     setCurrentIndex(nextIndex)
-  }
+  }, [currentIndex, cardsPerView, cards.length]);
 
   const prevSlide = () => {
     const prevIndex = currentIndex === 0 ? cards.length - cardsPerView : currentIndex - 1
@@ -101,7 +102,7 @@ export default function SisteNyttSlider() {
     }, 5000);
 
     return () => clearInterval(timer);
-  }, [currentIndex]);
+  }, [nextSlide]);
 
   return (
     <>
@@ -133,10 +134,12 @@ export default function SisteNyttSlider() {
                     style={{ width: `${100 / cards.length}%` }}
                   >
                     <div className="h-full overflow-hidden rounded-lg bg-white relative inset-0">
-                      <img
+                      <Image
                         src={card.image}
                         alt={card.title}
                         className="w-full object-cover aspect-square"
+                        width={800}
+                        height={600}
                       />
                       <div className="absolute bg-[#00000063] p-4 backdrop-blur-xl rounded-3xl left-5 bottom-5 right-5 text-indigo-50">
                         <h3 className="text-xl font-bold">{card.title}</h3>

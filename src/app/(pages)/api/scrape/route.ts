@@ -1,6 +1,15 @@
 import { NextResponse } from 'next/server';
 
-let cachedData: any[] | null = null;
+interface ScrapedArticle {
+  title: string;
+  content: string;
+  imageUrl: string;
+  author: string;
+  date: string;
+  articleUrl: string;
+}
+
+let cachedData: ScrapedArticle[] | null = null;
 let lastFetchTime: number = 0;
 
 export async function GET() {
@@ -46,7 +55,7 @@ export async function GET() {
   }
 }
 
-async function fetchWithAxios(): Promise<any[]> {
+async function fetchWithAxios(): Promise<ScrapedArticle[]> {
   const { default: axios } = await import('axios');
 
   const response = await axios.get('https://dfs.no/nc-2025-runde-1', {
@@ -60,7 +69,7 @@ async function fetchWithAxios(): Promise<any[]> {
   return parseHTML(response.data);
 }
 
-async function fetchWithPuppeteer(): Promise<any[]> {
+async function fetchWithPuppeteer(): Promise<ScrapedArticle[]> {
   const { default: puppeteer } = await import('puppeteer');
   
   const browser = await puppeteer.launch();
@@ -75,12 +84,12 @@ async function fetchWithPuppeteer(): Promise<any[]> {
   return parseHTML(content);
 }
 
-function parseHTML(html: string): any[] {
-  const { load } = require('cheerio');
+async function parseHTML(html: string): Promise<ScrapedArticle[]> {
+  const { load } = await import('cheerio');
   const $ = load(html);
-  const results: any[] = [];
+  const results: ScrapedArticle[] = [];
 
-  $('article.article-preview').each((index: number, element: CheerioElement) => {
+  $('article.article-preview').each((_: number, element) => {
     const $el = $(element);
     results.push({
       title: $el.find('.article-preview__title span').text().trim(),

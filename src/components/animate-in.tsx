@@ -37,7 +37,7 @@ const AnimateIn: React.FC<AnimateInProps> = ({
 
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
-  }, []);
+  }, [once]);
 
   return (
     <motion.div
