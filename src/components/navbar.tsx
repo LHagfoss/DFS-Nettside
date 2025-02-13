@@ -33,7 +33,7 @@ export default function Navbar() {
                 <div className="flex items-center space-x-4">
                     <Link href="/kontakt" className="text-xs px-2 py-2 bg-white text-indigo-700 hover:bg-indigo-100 sm:px-4 sm:py-2 rounded-md sm:text-sm font-bold uppercase">Kontakt Oss</Link>
                     <button type="button" className="" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                        <Image className="sm:hidden" src={MenuIcon} alt="Menu"></Image>
+                        <Image className="xl:hidden" src={MenuIcon} alt="Menu"></Image>
                     </button>
                     </div>
             </div>
@@ -155,7 +155,7 @@ export default function Navbar() {
                 </div>
 
 
-            <div className=" hidden w-full sm:flex justify-center items-center bg-indigo-100">
+            <div className=" hidden w-full xl:flex justify-center items-center bg-indigo-100">
                 <div className="container flex flex-wrap justify-between item-center py-3 font-bold uppercase">
                 <Link href="/livestream" className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">Live</Link>
                     <Link href="/resultater" className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">Resultater</Link>

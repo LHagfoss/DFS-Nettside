@@ -1,8 +1,8 @@
 export default function Livestream() {
     return (
         <div className="w-screen mt-24 flex flex-col items-center justify-center">
-
-            <div className="container aspect-[16/9] p-10">
+            <h1 className="sm:hidden">Spiller nå</h1>
+            <div className="container p-5 aspect-[16/9] mb-10 sm:p-0">
                 <iframe className="w-full h-full" 
                     src="https://vimeo.com/event/4918100/embed/interaction" //oppdater lenke for å bytte livestream
                     allow="autoplay; fullscreen; picture-in-picture" 
@@ -10,44 +10,34 @@ export default function Livestream() {
                     title="Livestream Embed"
                 />
             </div>
-            <div className="grid grid-cols-2 justify-between">
-                
-            <div className="container aspect-[16/9] p-3">
-                <iframe className="w-[30vw] h-[30vh]" 
-                    src="https://vimeo.com/event/4918100/embed/interaction" 
-                    allow="autoplay; fullscreen; picture-in-picture" 
-                    allowFullScreen 
-                    title="Livestream Embed"
-                />
+            <h1 className="sm:hidden">Kommer snart</h1>
+
+            <div className="container p-10 sm:p-0 grid grid-cols-1 sm:grid-cols-3 gap-5 justify-between">
+                <LiveStream link="https://vimeo.com/event/4918100/embed/interaction"  />
+                <LiveStream link="https://vimeo.com/event/4918177/embed/interaction" />
+                <LiveStream link="https://vimeo.com/event/4918642/embed/interaction" />
+                <LiveStream link="https://vimeo.com/event/4918663/embed/interaction" />
+                <LiveStream link="https://vimeo.com/event/4918675/embed/interaction" />
+                <LiveStream link="https://vimeo.com/event/4918681/embed/interaction" />
+                <LiveStream link="https://vimeo.com/event/4918692/embed/interaction" />
+                <LiveStream link="https://vimeo.com/event/4918698/embed/interaction" />  
             </div>
-            <div className="container aspect-[16/9] p-3">
-                <iframe className="w-[30vw] h-[30vh]" 
-                    src="https://vimeo.com/event/4918177/embed/interaction" 
-                    allow="autoplay; fullscreen; picture-in-picture" 
-                    allowFullScreen 
-                    title="Livestream Embed"
-                />
-            </div>
-            <div className="container aspect-[16/9] p-3">
-                <iframe className="w-[30vw] h-[30vh]" 
-                    src="https://vimeo.com/event/4918642/embed/interaction" 
-                    allow="autoplay; fullscreen; picture-in-picture" 
-                    allowFullScreen 
-                    title="Livestream Embed"
-                />
-            </div>
-            <div className="container aspect-[16/9] p-3">
-                <iframe className="w-[30vw] h-[30vh]" 
-                    src="https://vimeo.com/event/4918663/embed/interaction" 
-                    allow="autoplay; fullscreen; picture-in-picture" 
-                    allowFullScreen 
-                    title="Livestream Embed"
-                />
-            </div>
+
             </div>
             
 
             
-        </div>
+
     )
+}
+
+const LiveStream = ({link}: {link: string}) => {
+    return (
+        <iframe className="w-full full aspect-[16/9]" 
+        src={link} 
+        allow="autoplay; fullscreen; picture-in-picture" 
+        allowFullScreen 
+        title="Livestream Embed"
+    />
+    ) 
 }
