@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 import { animateHomeIn } from "@/app/utils/animations";
 
-import logoIcon from "@/public/ukrlogo.png"
+import logoIcon from "@/public/logo.svg"
 import MenuIcon from "@/public/menu.svg";
 
 

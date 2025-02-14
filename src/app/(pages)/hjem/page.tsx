@@ -15,7 +15,7 @@ export default function Home() {
 
   return (  
     <main className="w-screen flex flex-col items-center">
-      <title>DFS-Nettside | Hjem</title>
+      <title>NC 2025 - Runde 1 | Hjem</title>
       <header className="w-full h-screen flex justify-center items-center">
         <div className="container flex flex-row justify-between items-center">
           <div className="text-[#002f67] flex flex-col leading-[90%] text-4xl sm:text-8xl md:font-bold">
