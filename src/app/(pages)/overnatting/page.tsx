@@ -4,7 +4,7 @@ import Overnatting from "@/components/overnatting";
 export default function Home(){
     return(
         <div>
-        <title>DFS-Nettside | Overnatting</title>
+        <title>NC 2025 - Runde 1 | Overnatting</title>
         <Overnatting />
         </div>
     )
