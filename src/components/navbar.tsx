@@ -14,7 +14,9 @@ import MenuIcon from "@/public/menu.svg";
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isPåmeldingOpen, setIsPåmeldingOpen] = useState(false)
+    
     const pathname = usePathname();
+
     const handleNavClick = () => {
         setIsMenuOpen(false);
         setIsPåmeldingOpen(false);
@@ -169,7 +171,9 @@ export default function Navbar() {
                             NC
                         </Link>
                         <Link 
+                          
                             href="/kontakt" 
+
                             onClick={handleNavClick} 
                             className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm"
                         >
@@ -269,6 +273,32 @@ export default function Navbar() {
                         </div>
                     </nav>
                 </div>
+
+
+            <div className=" hidden w-full xl:flex justify-center items-center bg-indigo-100">
+                <div className="container flex flex-wrap justify-between item-center py-3 font-bold uppercase">
+                <Link href="/livestream" onClick={handleNavClick} className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">DirekteSending</Link>
+                    <Link href="/resultater" onClick={handleNavClick} className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">Resultater</Link>
+                    <Link href="/stevneinfo" onClick={handleNavClick} className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">Stevneinfo</Link>
+                    <Link 
+                        href="#" 
+                        onClick={(e) => {
+                            e.preventDefault();
+                            setIsPåmeldingOpen(!isPåmeldingOpen)
+                        }} 
+                        className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200"
+                    >
+                        Påmelding
+                    </Link>
+                    <Link href="/arrangorene" onClick={handleNavClick} className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">Arrangørene</Link>
+                    <Link href="/veibeskrivelse" onClick={handleNavClick} className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">Veibeskrivelse</Link>
+                    <Link href="/overnatting" onClick={handleNavClick} className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">Overnatting</Link>
+                    <Link href="/aktiviteter" onClick={handleNavClick} className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">Aktiviteter</Link>
+                    <Link href="https://skyttertidende.no/norgescup-1681983756/sections/29717/articles" target="blank_" onClick={handleNavClick} className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">NC</Link>
+                    <Link href="/sponsorer" onClick={handleNavClick} className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">Sponsorer</Link>
+                </div>
+            </div>
+
         </nav>
 
     )

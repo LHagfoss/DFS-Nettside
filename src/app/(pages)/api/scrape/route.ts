@@ -1,6 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
-import * as cheerio from 'cheerio';
-import puppeteer from 'puppeteer';
+import { NextResponse } from 'next/server';
 
 interface ScrapedArticle {
   title: string;
@@ -11,148 +9,104 @@ interface ScrapedArticle {
   articleUrl: string;
 }
 
-interface Article {
-  title: string;
-  date: string;
-  content: string;
-  imageUrl: string | null;
-  link?: string;
-}
+let cachedData: ScrapedArticle[] | null = null;
+let lastFetchTime: number = 0;
 
 export async function GET() {
+  const now = Date.now();
+  const fiveMinutes = 1 * 60 * 1000;
+
+  if (cachedData && now - lastFetchTime < fiveMinutes) {
+    return NextResponse.json(cachedData, {
+      headers: {
+        'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=59'
+      }
+    });
+  }
+
   try {
-    const browser = await puppeteer.launch();
-    const page = await browser.newPage();
+    const axiosData = await fetchWithAxios();
     
-    await page.goto('https://mittdfs.no/hovedside/aktuelt-na/sok/', {
-      waitUntil: 'networkidle2',
-      timeout: 30000
-    });
-
-    await page.waitForSelector('.article-preview', { timeout: 5000 });
-
-    const articles = await page.evaluate(() => {
-      const items = Array.from(document.querySelectorAll('.article-preview'));
-      return items.map(item => {
-        const titleElement = item.querySelector('.article-preview__title');
-        const linkElement = item.querySelector('a[ui-sref^="article"]');
-        
-        return {
-          title: titleElement?.textContent?.trim() || '',
-          url: linkElement?.getAttribute('href') || '',
-          date: item.querySelector('.article-preview__date')?.textContent?.trim() || ''
-        };
+    if (axiosData.length > 0) {
+      cachedData = axiosData;
+      lastFetchTime = now;
+      return NextResponse.json(cachedData, {
+        headers: {
+          'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=59'
+        }
       });
+    }
+
+    const puppeteerData = await fetchWithPuppeteer();
+    cachedData = puppeteerData;
+    lastFetchTime = now;
+
+    return NextResponse.json(cachedData, {
+      headers: {
+        'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=59'
+      }
     });
-
-    await browser.close();
-
-    return NextResponse.json({ articles });
   } catch (error) {
     console.error('Scraping failed:', error);
     return NextResponse.json(
-      { error: 'Scraping failed' },
-      { status: 500 }
+      [],
+      { 
+        status: 500,
+        headers: {
+          'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=59'
+        }
+      }
     );
   }
 }
 
 async function fetchWithAxios(): Promise<ScrapedArticle[]> {
   const { default: axios } = await import('axios');
-  
+
   const response = await axios.get('https://dfs.no/nc-2025-runde-1', {
-    timeout: 60000,
     headers: {
-      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36',
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
       'Accept-Language': 'en-US,en;q=0.9',
-      'Referer': 'https://google.com/'
+      'Cookie': 'cookie_consent=true'
     }
   });
-
-  if (response.status !== 200) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  }
 
   return parseHTML(response.data);
 }
 
-async function parseHTML(html: string): Promise<ScrapedArticle[]> {
-  if (!html) throw new Error('No HTML content received');
-  const $ = cheerio.load(html);
-  const results: ScrapedArticle[] = [];
+async function fetchWithPuppeteer(): Promise<ScrapedArticle[]> {
+  const { default: puppeteer } = await import('puppeteer');
+  
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  
+  await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36');
+  await page.goto('https://dfs.no/nc-2025-runde-1', { waitUntil: 'networkidle2' });
+  
+  const content = await page.content();
+  await browser.close();
 
-  console.log('Checking for article elements...');
-  console.log('Sample HTML structure:', $.html().substring(0, 500));
-
-  $('article.article-preview').each((index: number, element: CheerioElement) => {
-    try {
-      const $el = $(element);
-      const articleUrlPath = $el.find('a.article-preview__link').attr('href');
-      
-      if (!articleUrlPath || !$el.find('.article-preview__title').text()) {
-        console.warn(`Skipping incomplete article at index ${index}`);
-        return;
-      }
-
-      const article = {
-        title: $el.find('.article-preview__title span').text().trim(),
-        content: $el.find('.article-preview__text p').first().text().trim(),
-        imageUrl: $el.find('.article-preview__image').css('background-image')
-          .replace(/^url\(["']?/, '')
-          .replace(/["']?\)$/, ''),
-        author: $el.find('.article-preview__author a').text().trim(),
-        date: $el.find('.article-preview__date').text().trim(),
-        articleUrl: `https://dfs.no${articleUrlPath}`
-      };
-
-      results.push(article);
-    } catch (error) {
-      console.error(`Error processing article ${index}:`, error);
-    }
-  });
-
-  console.log(`Parsed ${results.length} articles`);
-  return results;
+  return parseHTML(content);
 }
 
-export async function POST(req: NextRequest) {
-  try {
-    const { url } = await req.json();
+async function parseHTML(html: string): Promise<ScrapedArticle[]> {
+  const { load } = await import('cheerio');
+  const $ = load(html);
+  const results: ScrapedArticle[] = [];
+
+  $('article.article-preview').each((_: number, element) => {
+    const $el = $(element);
+    const articleUrl = $el.find('a.article-preview__link').attr('href');
     
-    if (!url) {
-      return NextResponse.json({ error: 'Missing URL parameter' }, { status: 400 });
-    }
-
-    const response = await fetch(url);
-    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-    const html = await response.text();
-
-    if (!html) throw new Error('No HTML content received');
-    const $ = cheerio.load(html);
-
-    const articles: Article[] = [];
-    $('article.article-preview').each((i, el) => {
-      const $el = $(el);
-      articles.push({
-        title: $el.find('h3.article-preview__title').text().trim(),
-        date: $el.find('.article-preview__date').text().trim(),
-        content: $el.find('.article-preview__text p').first().text().trim(),
-        imageUrl: $el.find('.article-preview__image').css('background-image')
-          ?.replace(/^url\(["']?/, '')
-          ?.replace(/["']?\)$/, '') || null,
-        link: $el.find('a.article-preview__link').attr('href')
-      });
+    results.push({
+      title: $el.find('.article-preview__title span').text().trim(),
+      content: $el.find('.article-preview__text p').first().text().trim(),
+      imageUrl: $el.find('.article-preview__image img').attr('src') || '',
+      author: $el.find('.article-preview__author a').text().trim(),
+      date: $el.find('.article-preview__date').text().trim(),
+      articleUrl: articleUrl ? `https://dfs.no${articleUrl}` : ''
     });
+  });
 
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
-    return NextResponse.json({ articles });
-    
-  } catch (error: any) {
-    console.error('Scraping error:', error);
-    return NextResponse.json(
-      { error: error.message || 'Scraping failed' },
-      { status: 500 }
-    );
-  }
+  return results;
 }
