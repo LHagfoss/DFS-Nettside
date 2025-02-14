@@ -1,6 +1,6 @@
 export default function Stevneinfo() {
     return (
-        <div>
+        <div className="mt-36">
             <h1>Stevneinfo</h1>
         </div>
     )

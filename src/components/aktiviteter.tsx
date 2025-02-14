@@ -1,6 +1,6 @@
 export default function Aktiviteter() {
     return (
-        <div>
+        <div className="mt-36">
             <h1>Aktiviteter</h1>
         </div>
     )

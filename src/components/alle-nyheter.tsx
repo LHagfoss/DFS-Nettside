@@ -27,7 +27,7 @@ export default function AlleNyheter() {
 
   if (error) return <div>Failed to load</div>;
   if (!response) return (
-    <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+    <div className="mt-36 container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
       {[...Array(9)].map((_, index) => (
         <div key={index} className="border rounded-lg p-4 shadow-md animate-pulse">
           <div className="h-64 overflow-hidden">
@@ -56,7 +56,7 @@ export default function AlleNyheter() {
   const articles = response.data || [];
 
   return (
-    <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+    <div className="mt-36 container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
       {articles.map((article: ScrapedDataItem, index: number) => (
         <div key={index} className="border rounded-xl p-4 shadow-md">
           <div className="h-64 overflow-hidden">
