@@ -243,7 +243,7 @@ export default function Navbar() {
                             >
                                 Kristiansand bane
                             </Link>
-                            
+                            <hr />
                             <Link 
                                 href=" https://www.mittdfs.no/hovedside/aktuelt-na/arrangementskalender/pamelding/?eventId=25828&arrType=STEVNE" 
                                 target="_blank" 
