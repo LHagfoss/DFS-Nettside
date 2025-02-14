@@ -13,6 +13,12 @@ import MenuIcon from "@/public/menu.svg";
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isPåmeldingOpen, setIsPåmeldingOpen] = useState(false)
+    
+    const handleNavClick = () => {
+        setIsMenuOpen(false);
+        setIsPåmeldingOpen(false);
+    }
+
     useEffect(() => {
         animateHomeIn()
     }, [])
@@ -44,21 +50,21 @@ export default function Navbar() {
                     <div className="container py-4 flex flex-col gap-2">
                         <Link 
                             href="/livestream" 
-                            onClick={() => setIsMenuOpen(false)} 
+                            onClick={handleNavClick} 
                             className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm"
                         >
-                            Live
+                            DirekteSending
                         </Link>
                         <Link 
                             href="/resultater" 
-                            onClick={() => setIsMenuOpen(false)} 
+                            onClick={handleNavClick} 
                             className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm"
                         >
                             Resultater
                         </Link>
                         <Link 
                             href="/stevneinfo" 
-                            onClick={() => setIsMenuOpen(false)} 
+                            onClick={handleNavClick} 
                             className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm"
                         >
                             Stevneinfo
@@ -67,7 +73,6 @@ export default function Navbar() {
                             href="#" 
                             onClick={(e) => {
                                 e.preventDefault();
-                                setIsMenuOpen(false);
                                 setIsPåmeldingOpen(!isPåmeldingOpen);
                             }} 
                             className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm"
@@ -76,28 +81,28 @@ export default function Navbar() {
                         </Link>
                         <Link 
                             href="/arrangorene" 
-                            onClick={() => setIsMenuOpen(false)} 
+                            onClick={handleNavClick} 
                             className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm"
                         >
                             Arrangørene
                         </Link>
                         <Link 
                             href="/veibeskrivelse" 
-                            onClick={() => setIsMenuOpen(false)} 
+                            onClick={handleNavClick} 
                             className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm"
                         >
                             Veibeskrivelse
                         </Link>
                         <Link 
                             href="/overnatting" 
-                            onClick={() => setIsMenuOpen(false)} 
+                            onClick={handleNavClick} 
                             className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm"
                         >
                             Overnatting
                         </Link>
                         <Link 
                             href="/aktiviteter" 
-                            onClick={() => setIsMenuOpen(false)} 
+                            onClick={handleNavClick} 
                             className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm"
                         >
                             Aktiviteter
@@ -105,14 +110,14 @@ export default function Navbar() {
                         <Link 
                             href="https://skyttertidende.no/norgescup-1681983756/sections/29717/articles" 
                             target="_blank" 
-                            onClick={() => setIsMenuOpen(false)} 
+                            onClick={handleNavClick} 
                             className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm"
                         >
                             NC
                         </Link>
                         <Link 
                             href="/sponsorer" 
-                            onClick={() => setIsMenuOpen(false)} 
+                            onClick={handleNavClick} 
                             className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm"
                         >
                             Sponsorer
@@ -125,13 +130,13 @@ export default function Navbar() {
                 <div className={`w-screen z-10 bg-indigo-100 left-0 overflow-hidden transition-all duration-300 ease-in-out ${isPåmeldingOpen ? 'max-h-[500px]' : 'max-h-0'}`}>
                     <nav className="flex flex-col justify-center items-center">
                         <div className="container py-4 flex flex-col gap-2">
-                            <Link 
-                                href="https://www.mittdfs.no/hovedside/aktuelt-na/arrangementskalender/pamelding/?eventId=25811&arrType=STEVNE" 
+                        <Link 
+                                href="https://www.mittdfs.no/hovedside/aktuelt-na/arrangementskalender/pamelding/?eventId=25831&arrType=STEVNE" 
                                 target="_blank" 
                                 onClick={() => setIsPåmeldingOpen(false)}
                                 className="text-indigo-700 hover:bg-indigo-200 px-4 py-2 rounded-md text-sm"
                             >
-                                Online Påmelding: Kristiansand bane
+                                Lyngdal bane
                             </Link>
                             <Link 
                                 href="https://www.mittdfs.no/hovedside/aktuelt-na/arrangementskalender/pamelding/?eventId=25813&arrType=STEVNE" 
@@ -139,15 +144,41 @@ export default function Navbar() {
                                 onClick={() => setIsPåmeldingOpen(false)}
                                 className="text-indigo-700 hover:bg-indigo-200 px-4 py-2 rounded-md text-sm"
                             >
-                                Online Påmelding: Søgne bane
+                                Søgne bane
                             </Link>
+                            <Link 
+                                href="https://www.mittdfs.no/hovedside/aktuelt-na/arrangementskalender/pamelding/?eventId=25811&arrType=STEVNE" 
+                                target="_blank" 
+                                onClick={() => setIsPåmeldingOpen(false)}
+                                className="text-indigo-700 hover:bg-indigo-200 px-4 py-2 rounded-md text-sm"
+                            >
+                                Kristiansand bane
+                            </Link>
+                            
+                            <Link 
+                                href=" https://www.mittdfs.no/hovedside/aktuelt-na/arrangementskalender/pamelding/?eventId=25828&arrType=STEVNE" 
+                                target="_blank" 
+                                onClick={() => setIsPåmeldingOpen(false)}
+                                className="text-indigo-700 hover:bg-indigo-200 px-4 py-2 rounded-md text-sm"
+                            >
+                                Laudal 1 Stang og Felthurtig
+                            </Link>
+                            <Link 
+                                href="https://www.mittdfs.no/hovedside/aktuelt-na/arrangementskalender/pamelding/?eventId=25829&arrType=STEVNE" 
+                                target="_blank" 
+                                onClick={() => setIsPåmeldingOpen(false)}
+                                className="text-indigo-700 hover:bg-indigo-200 px-4 py-2 rounded-md text-sm"
+                            >
+                                Laudal 2 Stang og Felthurtig
+                            </Link>
+                            
                             <Link 
                                 href="https://www.mittdfs.no/hovedside/aktuelt-na/arrangementskalender/pamelding/?eventId=25812&arrType=STEVNE" 
                                 target="_blank" 
                                 onClick={() => setIsPåmeldingOpen(false)}
                                 className="text-indigo-700 hover:bg-indigo-200 px-4 py-2 rounded-md text-sm"
                             >
-                                Online Påmelding: Kristiansand Stang og Felthurtig
+                                Kristiansand Stang og Felthurtig
                             </Link>
                             {/* Add more påmelding-related links here if needed */}
                         </div>
@@ -157,9 +188,9 @@ export default function Navbar() {
 
             <div className=" hidden w-full xl:flex justify-center items-center bg-indigo-100">
                 <div className="container flex flex-wrap justify-between item-center py-3 font-bold uppercase">
-                <Link href="/livestream" className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">Live</Link>
-                    <Link href="/resultater" className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">Resultater</Link>
-                    <Link href="/stevneinfo" className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">Stevneinfo</Link>
+                <Link href="/livestream" onClick={handleNavClick} className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">DirekteSending</Link>
+                    <Link href="/resultater" onClick={handleNavClick} className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">Resultater</Link>
+                    <Link href="/stevneinfo" onClick={handleNavClick} className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">Stevneinfo</Link>
                     <Link 
                         href="#" 
                         onClick={(e) => {
@@ -170,12 +201,12 @@ export default function Navbar() {
                     >
                         Påmelding
                     </Link>
-                    <Link href="/arrangorene" className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">Arrangørene</Link>
-                    <Link href="/veibeskrivelse" className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">Veibeskrivelse</Link>
-                    <Link href="/overnatting" className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">Overnatting</Link>
-                    <Link href="/aktiviteter" className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">Aktiviteter</Link>
-                    <Link href="https://skyttertidende.no/norgescup-1681983756/sections/29717/articles" target="blank_" className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">NC</Link>
-                    <Link href="/sponsorer" className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-2 00">Sponsorer</Link>
+                    <Link href="/arrangorene" onClick={handleNavClick} className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">Arrangørene</Link>
+                    <Link href="/veibeskrivelse" onClick={handleNavClick} className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">Veibeskrivelse</Link>
+                    <Link href="/overnatting" onClick={handleNavClick} className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">Overnatting</Link>
+                    <Link href="/aktiviteter" onClick={handleNavClick} className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">Aktiviteter</Link>
+                    <Link href="https://skyttertidende.no/norgescup-1681983756/sections/29717/articles" target="blank_" onClick={handleNavClick} className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">NC</Link>
+                    <Link href="/sponsorer" onClick={handleNavClick} className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">Sponsorer</Link>
                 </div>
             </div>
         </nav>

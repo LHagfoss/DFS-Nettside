@@ -1,8 +1,8 @@
 import React from "react";
 import Image from 'next/image';
-import logoLyngdal from '@/public/logo1.png';
-import logoSogne from '@/public/logo4.png';
-import logoLaudal from '@/public/logo3.png';
+import logoLyngdal from '@/public/logo3.png';
+import logoSogne from '@/public/logo1.png';
+import logoLaudal from '@/public/logo4.png';
 import logoKristiansand from '@/public/logo2.png';
 
 
@@ -19,6 +19,7 @@ export default function Kontakt() {
                 <p className="text-gray-600">GPS-koordinater: 58.163580°N, 7.096497°Ø</p>
                 <p className="text-gray-600">Kontakt tlf: 905 84 226</p>
                 <p className="text-gray-600">Email: lyngdal@skytterlag.no</p>
+                <a href="https://mittdfs.no/lyngdal" target="blank_" className="text-indigo-700">Nettside</a>
             </div>
             <div className="contact-person bg-zinc-100 p-10 rounded-3xl shadow mb-4 h-full">
                 <Image src={logoSogne} alt="Sogne Logo" width={100} height={100} />
@@ -28,6 +29,7 @@ export default function Kontakt() {
                 <p className="text-gray-600">GPS-koordinater: 58.110707°N, 7.719182°Ø</p>
                 <p className="text-gray-600">Kontakt tlf: 901 14 880</p>
                 <p className="text-gray-600">Email: sogne@skytterlag.no</p>
+                <a href="https://dfsgrasrot.no/soegne-skytterlag" target="blank_" className="text-indigo-700">Nettside</a>
             </div>
             <div className="contact-person bg-zinc-100 p-10 rounded-3xl shadow mb-4 h-full">
                 <Image src={logoLaudal} alt="Laudal Logo" width={100} height={100} />
@@ -37,6 +39,7 @@ export default function Kontakt() {
                 <p className="text-gray-600">GPS-koordinater: 58.233512°N, 7.469268°Ø</p>
                 <p className="text-gray-600">Kontakt tlf: 480 85 744</p>
                 <p className="text-gray-600">Email: laudal@skytterlag.no</p>
+                <a href="https://laudalskytterlag.no/" target="blank_" className="text-indigo-700">Nettside</a>
             </div>
             <div className="contact-person bg-zinc-100 p-10 rounded-3xl shadow mb-4 h-full">
                 <Image src={logoKristiansand} alt="Kristiansand og Omegn Logo" width={100} height={100} />
@@ -46,6 +49,7 @@ export default function Kontakt() {
                 <p className="text-gray-600">GPS-koordinater: 58.238571°N, 8.064855°Ø</p>
                 <p className="text-gray-600">Kontakt tlf: 916 20 275</p>
                 <p className="text-gray-600">Email: kom@skytterlag.no</p>
+                <a href="https://dfsgrasrot.no/kristiansand-og-omegn-skytterlag" target="blank_" className="text-indigo-700">Nettside</a>
             </div>
         </div>
 
