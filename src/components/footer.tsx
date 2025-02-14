@@ -3,7 +3,7 @@
 import Image from "next/image"
 import norgescupen from "@/public/logoSecond.png"
 import dfs from "@/public/dfslogo.png"
-import pil from "@/public/pil.png"
+import pil from "@/public/pil.svg"
 import youtubeImage from "@/public/youtube.png"
 import linkedinImage from "@/public/linkedin.png"
 
@@ -33,15 +33,15 @@ export default function Footer() {
                 <Image src={dfs} alt="dfslogo" className="w-fit h-14 object-cover"/>
             </div>
 
-             <button onClick={tiltoppen} className="flex items-center p-3 gap-2 h-[40px] bg-white hover:bg-gray-100">
+             <button onClick={tiltoppen} className=" rounded text-indigo-800 flex items-center p-3 gap-2 h-[40px] bg-white hover:bg-gray-100">
                 <p>Gå til toppen</p>
-                 <Image src={pil} alt="pil" className="w-fit h-7 object-cover"/>
+                 <Image src={pil} alt="pil" className="w-fit h-7 fill-indigo-800 object-cover"/>
              </button>
 
         </div>
 
         <div className="w-full ">Laget av <a href="https://lhagfoss.com/" target="blank_" className="text-blue-700 hover:underline">Lucas Hagfoss</a>, <a href="https://www.linkedin.com/in/odin-johan-laursen-leite-13b7282a5/" target="blank_" className="text-blue-700 hover:underline">
-                Odin Laursen-Leite</a> og <a href="https://www.linkedin.com/in/sidney-ly-175336257/" target="blank_" className="text-blue-700 hover:underline">Sidney Ly</a>
+                Odin-Johan Laursen-Leite</a> og <a href="https://www.linkedin.com/in/sidney-ly-175336257/" target="blank_" className="text-blue-700 hover:underline">Sidney Ly</a>
         </div>
 
         <div className="w-full h-[1px] bg-black my-2">
