@@ -78,24 +78,23 @@ export default function Veibeskrivelse() {
                 <div className="flex flex-col">
                     <div className="flex flex-col text-2xl md:text-3xl text-[#002f67] font-bold">Laudal Skytterlag - Laudal Skytebane</div>
                     <div className="flex flex-col mt-3 text-lg md:text-2xl font-medium text-[#002f67]">
-                        Laudal skal bygge et helt nytt stang og felthurtig anlegg i løpet av 2024/2025 med utstyr fra Megalink, Skytterhuset har kafeteria med kapasitet på inntil ca 80 personer, det er tilrettelagt tilgang til skytterhuset og toalett for rullestolbrukere. Laudal har internettforbindelse og vil kunne levere live resultater.
+                    Laudal skal bygge et helt nytt stang og felthurtig anlegg i løpet av 2024/2025 med utstyr fra Megalink, Skytterhuset har kafeteria med kapasitet på inntil ca 80 personer, det er tilrettelagt tilgang til skytterhuset og toalett for rullestolbrukere. Laudal har internettforbindelse og vil kunne levere live resultater.
                     </div>
                 </div>
-            </div>
+                
+                <div className="container flex flex-col md:flex-row justify-between w-full gap-5 md:gap-10">
+                    <div className="flex flex-col w-full md:w-1/3">
+                        <iframe 
+                            className="w-full h-[250px] md:h-[300px]" 
+                            frameBorder="0" 
+                            scrolling="no" 
+                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB_fgcY7vCBUkr_R2r4f0fEvN0AndGjGhY&q=58.23351176865408,7.4692684384200865&&zoom=13"
+                        ></iframe>
+                        <a className="text-blue-700 hover:underline mt-2" href="https://maps.google.com/maps?key=AIzaSyB_fgcY7vCBUkr_R2r4f0fEvN0AndGjGhY&amp;q=58.23351176865408,7.4692684384200865&amp;&amp;zoom=13" target="_blank">Vis vei</a>
+                    </div>
 
-            <div className="container flex flex-col md:flex-row justify-between mt-10 md:mt-20 px-4 md:px-32">
-                <div className="flex flex-col w-full md:w-1/3">
-                    <iframe 
-                        className="w-full h-[250px] md:h-[300px]" 
-                        frameBorder="0" 
-                        scrolling="no" 
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB_fgcY7vCBUkr_R2r4f0fEvN0AndGjGhY&q=58.23351176865408,7.4692684384200865&&zoom=13"
-                    ></iframe>
-                    <a className="text-blue-700 hover:underline mt-2" href="https://maps.google.com/maps?key=AIzaSyB_fgcY7vCBUkr_R2r4f0fEvN0AndGjGhY&amp;q=58.23351176865408,7.4692684384200865&amp;&amp;zoom=13" target="_blank">Vis vei</a>
-                </div>
-
-                <div className="relative overflow-x-auto w-full md:w-2/3"> 
-                    <table className="text-[#002f67] w-full text-sm md:text-base">
+                    <div className="relative overflow-x-auto w-full md:w-2/3"> 
+                        <table className="text-[#002f67] w-full text-sm md:text-base">
                             <thead className="text-base md:text-xl bg-indigo-100 border"> 
                                 <tr>
                                     <th className="px-2 md:px-5 py-1 border-r">BANE</th>
@@ -147,26 +146,26 @@ export default function Veibeskrivelse() {
                     </table>
                 </div>
             </div>
+        </div>
 
             <div className="container mt-10 md:mt-20 gap-5 md:gap-10 flex flex-col justify-between items-start px-4 md:px-32">
                 <div className="flex flex-col">
                     <div className="flex flex-col text-2xl md:text-3xl text-[#002f67] font-bold">Søgne Skytterlag - Søgne og Greipstad Sparebank Arena</div>
                     <div className="flex flex-col mt-3 text-lg md:text-2xl font-medium text-[#002f67]">
-                        Flott og moderne skyteanlegg som blir ferdigstilt i 2024 med 10 elektroniske skiver på både 100 og 200 meter fra Kongsberg. Anlegget har store voller på begge sider i skyteretningen på både 100 og 200 meter, noe som gjør at skytteren blir lite utsatt for vind. Anlegget har et moderne og lyst skytterhus med stor takhøyde i kafeteria og god kapasitet for besøkende og livevisning og live resultater under stevnet.
+                    Flott og moderne skyteanlegg som blir ferdigstilt i 2024 med 10 elektroniske skiver på både 100 og 200 meter fra Kongsberg. Anlegget har store voller på begge sider i skyteretningen på både 100 og 200 meter, noe som gjør at skytteren blir lite utsatt for vind. Anlegget har et moderne og lyst skytterhus med stor takhøyde i kafeteria og god kapasitet for besøkende og livevisning og live resultater under stevnet.
                     </div>
                 </div>
-            </div>
-
-            <div className="container flex flex-col md:flex-row justify-between mt-10 md:mt-20 px-4 md:px-32">
-                <div className="flex flex-col w-full md:w-1/3">
-                    <iframe 
-                        className="w-full h-[250px] md:h-[300px]" 
-                        frameBorder="0" 
-                        scrolling="no" 
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB_fgcY7vCBUkr_R2r4f0fEvN0AndGjGhY&amp;q=58.11070720483179,7.719182523271993&amp;&amp;zoom=13"
-                    ></iframe>
-                    <a className="text-blue-700 hover:underline mt-2" href="https://maps.google.com/maps?key=AIzaSyB_fgcY7vCBUkr_R2r4f0fEvN0AndGjGhY&amp;q=58.11070720483179,7.719182523271993&amp;&amp;zoom=13" target="_blank">Vis vei</a>
-                </div>
+                
+                <div className="container flex flex-col md:flex-row justify-between w-full gap-5 md:gap-10">
+                    <div className="flex flex-col w-full md:w-1/3">
+                        <iframe 
+                            className="w-full h-[250px] md:h-[300px]"
+                            frameBorder="0" 
+                            scrolling="no" 
+                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB_fgcY7vCBUkr_R2r4f0fEvN0AndGjGhY&amp;q=58.11070720483179,7.719182523271993&amp;&amp;zoom=13"
+                        ></iframe>
+                        <a className="text-blue-700 hover:underline mt-2" href="https://maps.google.com/maps?key=AIzaSyB_fgcY7vCBUkr_R2r4f0fEvN0AndGjGhY&amp;q=58.11070720483179,7.719182523271993&amp;&amp;zoom=13" target="_blank">Vis vei</a>
+                    </div>
                     <div className="relative overflow-x-auto w-full md:w-2/3"> 
                         <table className="text-[#002f67] w-full text-sm md:text-base">
                             <thead className="text-base md:text-xl bg-indigo-100 border"> 
@@ -176,28 +175,29 @@ export default function Veibeskrivelse() {
                                     <th className="px-2 md:px-5 py-1">LENGDE</th>
                                 </tr>
                             </thead>
-                        <tbody>
-                                <tr className="text-sm md:text-lg">
-                                    <td className="px-2 md:px-5 py-1 border-r border-l text-center">
-                                        <a className="hover:underline text-blue-700" href="https://maps.google.com/maps?key=AIzaSyB_fgcY7vCBUkr_R2r4f0fEvN0AndGjGhY&amp;q=58.11070720483179,7.719182523271993&amp;&amp;zoom=13" target="_blank">
-                                            200M
-                                        </a>
-                                    </td>
-                                    <td className="px-2 md:px-5 py-1 border-r text-center">360 grader</td>
-                                    <td className="px-2 md:px-5 py-1 border-r text-center">190 meter</td>
-                                </tr>
+                            <tbody>
+                                    <tr className="text-sm md:text-lg">
+                                        <td className="px-2 md:px-5 py-1 border-r border-l text-center">
+                                            <a className="hover:underline text-blue-700" href="https://maps.google.com/maps?key=AIzaSyB_fgcY7vCBUkr_R2r4f0fEvN0AndGjGhY&amp;q=58.11070720483179,7.719182523271993&amp;&amp;zoom=13" target="_blank">
+                                                200M
+                                            </a>
+                                        </td>
+                                        <td className="px-2 md:px-5 py-1 border-r text-center">69 grader</td>
+                                        <td className="px-2 md:px-5 py-1 border-r text-center">192 meter</td>
+                                    </tr>
 
-                                 <tr className="text-sm md:text-lg">
-                                    <td className="px-2 md:px-5 py-1 border-r border-l border-b text-center">
-                                        <a className="hover:underline text-blue-700" href="https://maps.google.com/maps?key=AIzaSyB_fgcY7vCBUkr_R2r4f0fEvN0AndGjGhY&amp;q=58.11075712854847,7.719581047027041&amp;&amp;zoom=13" target="_blank">
-                                            100M
-                                        </a>
-                                    </td>
-                                    <td className="px-2 md:px-5 py-1 border-r border-b text-center">360 grader</td>
-                                    <td className="px-2 md:px-5 py-1 border-r border-b text-center">100 meter</td>
-                                </tr>
-                        </tbody>
-                    </table>
+                                     <tr className="text-sm md:text-lg">
+                                        <td className="px-2 md:px-5 py-1 border-r border-l border-b text-center">
+                                            <a className="hover:underline text-blue-700" href="https://maps.google.com/maps?key=AIzaSyB_fgcY7vCBUkr_R2r4f0fEvN0AndGjGhY&amp;q=58.11075712854847,7.719581047027041&amp;&amp;zoom=13" target="_blank">
+                                                100M
+                                            </a>
+                                        </td>
+                                        <td className="px-2 md:px-5 py-1 border-r border-b text-center">73 grader</td>
+                                        <td className="px-2 md:px-5 py-1 border-r border-b text-center">100 meter</td>
+                                    </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 
@@ -236,7 +236,7 @@ export default function Veibeskrivelse() {
                                             200M
                                         </a>
                                     </td>
-                                    <td className="px-2 md:px-5 py-1 border-r text-center">325 grader</td>
+                                    <td className="px-2 md:px-5 py-1 border-r text-center">10 grader</td>
                                     <td className="px-2 md:px-5 py-1 border-r text-center">200 meter</td>
                                 </tr>
 
@@ -246,7 +246,7 @@ export default function Veibeskrivelse() {
                                             100M
                                         </a>
                                     </td>
-                                    <td className="px-2 md:px-5 py-1 border-r text-center">352 grader</td>
+                                    <td className="px-2 md:px-5 py-1 border-r text-center">95 grader</td>
                                     <td className="px-2 md:px-5 py-1 border-r text-center">100 meter</td>
                                 </tr>
                                 
@@ -256,7 +256,7 @@ export default function Veibeskrivelse() {
                                             STANG
                                         </a>
                                     </td>
-                                    <td className="px-2 md:px-5 py-1 border-r text-center">Nordlig</td>
+                                    <td className="px-2 md:px-5 py-1 border-r text-center">95 grader</td>
                                     <td className="px-2 md:px-5 py-1 border-r text-center"></td>
                                 </tr>
 
@@ -266,7 +266,7 @@ export default function Veibeskrivelse() {
                                             FELTHURTIG
                                         </a>
                                     </td>
-                                    <td className="px-2 md:px-5 py-1 border-r border-b text-center">Nordlig</td>
+                                    <td className="px-2 md:px-5 py-1 border-r border-b text-center">95 grader</td>
                                     <td className="px-2 md:px-5 py-1 border-r border-b text-center"></td>
                                 </tr>
                         </tbody>
