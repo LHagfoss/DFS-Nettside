@@ -9,7 +9,7 @@ import logoKristiansand from '@/public/logo2.png';
 export default function Kontakt() {
   return (
     <main className="w-full h-screen p-10 pt-44 bg-gray-100 flex justify-center items-center">
-        <title>DFS-Nettside | Kontakt Oss</title>
+        <title>NC 2025 - Runde 1 | Kontakt Oss</title>
         <div className="container grid grid-cols-2 gap-4 h-full">
             <div className="contact-person bg-zinc-100 p-10 rounded-3xl shadow mb-4 h-full">
                 <Image src={logoLyngdal} alt="Lyngdal Logo" width={100} height={100} />
