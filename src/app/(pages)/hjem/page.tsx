@@ -2,11 +2,10 @@
 
 import React from "react";
 import InfiniteScroll from "@/components/infinite-scroll";
-// import SisteNyttSlider from "@/components/siste-nytt-slider";
 import Image from "next/image";
 import dfslogo from "@/public/logoSecond.png";
 import AnimateIn from "@/components/animate-in";
-import ScrapeData from "@/components/scrape-content";
+import SisteNytt from "@/components/siste-nytt";
 
 export default function Home() {
   const dfsnettside = () => {
@@ -29,14 +28,14 @@ export default function Home() {
         </header>
         
         <AnimateIn>
-          <div className="flex flex-col leading-[90%] text-4xl sm:text-8xl md:font-bold flex-row justify-center items-center">
+          <div className="flex leading-[90%] text-4xl sm:text-8xl md:font-bold justify-center items-center">
           <h1 className="  text-[#002f67] text-bold text-2xl sm:text-4xl">Arrangørene</h1>
           </div>
           <InfiniteScroll />
         </AnimateIn>
 
         <AnimateIn>
-          <ScrapeData />
+          <SisteNytt />
         </AnimateIn>
 
        {/* <AnimateIn>
