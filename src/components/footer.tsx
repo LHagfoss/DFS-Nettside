@@ -3,7 +3,7 @@
 import Image from "next/image"
 import norgescupen from "@/public/logoSecond.png"
 import dfs from "@/public/dfslogo.png"
-import pil from "@/public/pil.png"
+import pil from "@/public/pil.svg"
 import youtubeImage from "@/public/youtube.png"
 import linkedinImage from "@/public/linkedin.png"
 
@@ -33,9 +33,9 @@ export default function Footer() {
                 <Image src={dfs} alt="dfslogo" className="w-fit h-14 object-cover"/>
             </div>
 
-             <button onClick={tiltoppen} className="flex items-center p-3 gap-2 h-[40px] bg-white hover:bg-gray-100">
+             <button onClick={tiltoppen} className=" rounded text-indigo-800 flex items-center p-3 gap-2 h-[40px] bg-white hover:bg-gray-100">
                 <p>Gå til toppen</p>
-                 <Image src={pil} alt="pil" className="w-fit h-7 object-cover"/>
+                 <Image src={pil} alt="pil" className="w-fit h-7 fill-indigo-800 object-cover"/>
              </button>
 
         </div>
