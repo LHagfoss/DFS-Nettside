@@ -28,6 +28,9 @@ export default function Home() {
         </header>
         
         <AnimateIn>
+          <div className="text-[#002f67] flex flex-col justify-center items-center m-8 leading-[90%] text-4xl sm:text-8xl md:font-bold">
+            <h1 className="text-2xl sm:text-4xl"> Arrangørene</h1>
+          </div>
           <InfiniteScroll />
         </AnimateIn>
 
