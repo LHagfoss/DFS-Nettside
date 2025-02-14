@@ -3,6 +3,7 @@
 import Image from "next/image"
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 import { animateHomeIn } from "@/app/utils/animations";
 
@@ -14,6 +15,8 @@ export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isPåmeldingOpen, setIsPåmeldingOpen] = useState(false)
     
+    const pathname = usePathname();
+
     const handleNavClick = () => {
         setIsMenuOpen(false);
         setIsPåmeldingOpen(false);
@@ -37,7 +40,6 @@ export default function Navbar() {
                     </div>
                 </div>
                 <div className="flex items-center space-x-4">
-                    <Link href="/kontakt" className="text-xs px-2 py-2 bg-white text-indigo-700 hover:bg-indigo-100 sm:px-4 sm:py-2 rounded-md sm:text-sm font-bold uppercase">Kontakt Oss</Link>
                     <button type="button" className="" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                         <Image className="xl:hidden" src={MenuIcon} alt="Menu"></Image>
                     </button>
@@ -79,6 +81,59 @@ export default function Navbar() {
                         >
                             Påmelding
                         </Link>
+                        {/* Påmelding dropdown for mobile */}
+                        <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isPåmeldingOpen ? 'max-h-[500px]' : 'max-h-0'}`}>
+                            <div className="pl-4 flex flex-col gap-2">
+                                <Link 
+                                    href="https://www.mittdfs.no/hovedside/aktuelt-na/arrangementskalender/pamelding/?eventId=25831&arrType=STEVNE" 
+                                    target="_blank" 
+                                    onClick={handleNavClick}
+                                    className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm"
+                                >
+                                    Lyngdal bane
+                                </Link>
+                                <Link 
+                                    href="https://www.mittdfs.no/hovedside/aktuelt-na/arrangementskalender/pamelding/?eventId=25813&arrType=STEVNE" 
+                                    target="_blank" 
+                                    onClick={handleNavClick}
+                                    className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm"
+                                >
+                                    Søgne bane
+                                </Link>
+                                <Link 
+                                    href="https://www.mittdfs.no/hovedside/aktuelt-na/arrangementskalender/pamelding/?eventId=25811&arrType=STEVNE" 
+                                    target="_blank" 
+                                    onClick={handleNavClick}
+                                    className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm"
+                                >
+                                    Kristiansand bane
+                                </Link>
+                                <Link 
+                                    href=" https://www.mittdfs.no/hovedside/aktuelt-na/arrangementskalender/pamelding/?eventId=25828&arrType=STEVNE" 
+                                    target="_blank" 
+                                    onClick={handleNavClick}
+                                    className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm"
+                                >
+                                    Laudal 1 Stang og Felthurtig
+                                </Link>
+                                <Link 
+                                    href="https://www.mittdfs.no/hovedside/aktuelt-na/arrangementskalender/pamelding/?eventId=25829&arrType=STEVNE" 
+                                    target="_blank" 
+                                    onClick={handleNavClick}
+                                    className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm"
+                                >
+                                    Laudal 2 Stang og Felthurtig
+                                </Link>
+                                <Link 
+                                    href="https://www.mittdfs.no/hovedside/aktuelt-na/arrangementskalender/pamelding/?eventId=25812&arrType=STEVNE" 
+                                    target="_blank" 
+                                    onClick={handleNavClick}
+                                    className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm"
+                                >
+                                    Kristiansand Stang og Felthurtig
+                                </Link>
+                            </div>
+                        </div>
                         <Link 
                             href="/arrangorene" 
                             onClick={handleNavClick} 
@@ -116,18 +171,52 @@ export default function Navbar() {
                             NC
                         </Link>
                         <Link 
-                            href="/sponsorer" 
+                          
+                            href="/kontakt" 
+
                             onClick={handleNavClick} 
                             className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm"
                         >
-                            Sponsorer
+                            Kontakt oss
                         </Link>
                     </div>
                 </nav>
             </div>
                 
-                {/* Påmelding */}
-                <div className={`w-screen z-10 bg-indigo-100 left-0 overflow-hidden transition-all duration-300 ease-in-out ${isPåmeldingOpen ? 'max-h-[500px]' : 'max-h-0'}`}>
+                
+
+            <div className="hidden w-full xl:flex justify-center items-center bg-indigo-100">
+                <div className="container flex flex-wrap justify-between item-center py-3 font-bold uppercase">
+                <Link 
+                    href="/livestream" 
+                    onClick={handleNavClick} 
+                    className={`text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200 
+                    ${pathname === "/livestream" ? "text-indigo-500 underline" : "underline-none"}`}
+                >
+                    DirekteSending
+                </Link>
+                    <Link href="/resultater" onClick={handleNavClick} className={`text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200 ${pathname === "/resultater" ? "text-indigo-500 underline" : "underline-none"}`}>Resultater</Link>
+                    <Link href="/stevneinfo" onClick={handleNavClick} className={`text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200 ${pathname === "/stevneinfo" ? "text-indigo-500 underline" : "underline-none"}`}>Stevneinfo</Link>
+                    <Link 
+                        href="#" 
+                        onClick={(e) => {
+                            e.preventDefault();
+                            setIsPåmeldingOpen(!isPåmeldingOpen)
+                        }} 
+                        className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200"
+                    >
+                        Påmelding
+                    </Link>
+                    <Link href="/arrangorene" onClick={handleNavClick} className={`text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200 ${pathname === "/arrangorene" ? "text-indigo-500 underline" : "underline-none"}`}>Arrangørene</Link>
+                    <Link href="/veibeskrivelse" onClick={handleNavClick} className={`text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200 ${pathname === "/veibeskrivelse" ? "text-indigo-500 underline" : "underline-none"}`}>Veibeskrivelse</Link>
+                    <Link href="/overnatting" onClick={handleNavClick} className={`text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200 ${pathname === "/overnatting" ? "text-indigo-500 underline" : "underline-none"}`}>Overnatting</Link>
+                    <Link href="/aktiviteter" onClick={handleNavClick} className={`text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200 ${pathname === "/aktiviteter" ? "text-indigo-500 underline" : "underline-none"}`}>Aktiviteter</Link>
+                    <Link href="/kontakt" onClick={handleNavClick} className={`text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200 ${pathname === "/kontakt" ? "text-indigo-500 underline" : "underline-none"}`}>Kontakt Oss</Link>
+                </div>
+            </div>
+
+            {/* Påmelding */}
+            <div className={`hidden md:flex border-y border-indigo-600 w-screen z-10 bg-indigo-100 left-0 overflow-hidden transition-all duration-300 ease-in-out ${isPåmeldingOpen ? 'max-h-[500px]' : 'max-h-0'}`}>
                     <nav className="flex flex-col justify-center items-center">
                         <div className="container py-4 flex flex-col gap-2">
                         <Link 
@@ -209,6 +298,8 @@ export default function Navbar() {
                     <Link href="/sponsorer" onClick={handleNavClick} className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">Sponsorer</Link>
                 </div>
             </div>
+
         </nav>
+
     )
 }
