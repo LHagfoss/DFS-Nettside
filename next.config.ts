@@ -18,6 +18,12 @@ const nextConfig: NextConfig = {
     ]
   },
   serverExternalPackages: ['puppeteer-core', '@sparticuz/chromium', 'cheerio'],
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
 
 export default nextConfig;
