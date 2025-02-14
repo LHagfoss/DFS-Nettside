@@ -5,17 +5,18 @@ import lyngdalparkering from "@/public/lyngdalparkering.png"
 import laudalparkering from "@/public/laudalparkering.png"
 import sogneparkering from "@/public/sogneparkering.png"
 import kristiansandparkering from "@/public/kristiansandparkering.png"
+import Link from "next/link"
 
 export default function Veibeskrivelse() {
     return (
         <div className="w-full flex flex-col justify-center items-center mt-20 md:mt-52 px-4 md:px-0">
-            <div className="container gap-5 md:gap-10 flex flex-col md:flex-row justify-between items-center md:items-start">
+            <div className="container gap-5 md:gap-10 flex flex-col md:flex-row justify-between items-center md:items-start px-4 md:px-32">
                 <Image 
                     src={sorlandet} 
                     alt="sorlandetlogo" 
-                    className="object-cover w-full md:w-1/3 md:ml-32"
+                    className="object-cover w-full md:w-3/5"
                 />
-                <div className="flex-col flex md:mr-32">
+                <div className="flex-col flex w-full md:w-auto">
                     <div className="flex flex-col text-xl md:text-2xl text-[#002f67] font-bold md:text-left">
                         En kompakt stevnehelg på Sørlandet
                     </div>
@@ -27,9 +28,19 @@ export default function Veibeskrivelse() {
 
             <div className="container mt-10 md:mt-20 gap-5 md:gap-10 flex flex-col justify-between items-start px-4 md:px-32">
                 <div className="flex flex-col">
+                    <div className="flex flex-col text-xl md:text-2xl text-[#002f67] font-bold">Reiser du med campingvogn?</div>
+                    <div className="mt-3 text-base md:text-xl font-medium text-[#002f67]">
+                        Flere av banene (Lyngdal, Laudal og Søgne) har ikke plass til at du tar med campingvogn helt frem til skytebanen, vi anbefaler de som reiser med vogn å parkere denne på overnattingsstedet, hvis dette ikke er mulig eller veldig upraktisk ifbm ankomst eller avreise så tilrettelegger arrangørlagene plasser man kan sette fra seg vogn litt lenger unna banen og kjøre til banen med bilen. Arrangøren har inngått samarbeid med Åros Feriesenter i Søgne og anbefaler skytterne om å samle seg der,
+                        <Link href="/overnatting" className="hover:underline text-blue-700"> les mer her.</Link>
+                    </div>
+                </div>
+            </div>
+
+            <div className="container mt-10 md:mt-20 gap-5 md:gap-10 flex flex-col justify-between items-start px-4 md:px-32">
+                <div className="flex flex-col">
                     <div className="flex flex-col text-xl md:text-2xl text-[#002f67] font-bold">Lyngdal Skytterlag - Lyngdal Skytebane</div>
                     <div className="flex flex-col mt-3 text-base md:text-xl font-medium text-[#002f67]">
-                        Skytebaneanlegget i Lyngdal ligger sentralt til, like ved E39. Anlegget har 14 skiver på 200m og 12 skiver på 100m med elektronikk fra KME. Banene og bygningsmassen er fra 1990 tallet, men er godt ivaretatt og vedlikeholdt, skytterhuset har kafeteria og live visning.
+                        Skytebaneanlegget i Lyngdal ligger sentralt til, like ved E39. Banen har adresse Skytebaneveien 1, Lyngdal, det vil bli skiltet fra rundkjøring på E39, etter at du har tatt av E39 tar du første vei til høyre følg veien til venstre til enden for å komme til skytebanen. Det er ca 850 meter fra rundkjøringen på E39 til skytebanen. 
                     </div>
                 </div>
                 
@@ -80,18 +91,18 @@ export default function Veibeskrivelse() {
 
             <div className="container mt-10 gap-5 md:gap-10 flex flex-col justify-between items-start">
                 <div className="flex flex-col px-4 md:px-32">
-                    <div className="flex flex-col lg:flex-row gap-4 lg:gap-8 items-center lg:items-start">
+                    <div className="flex flex-col lg:flex-row gap-4 lg:gap-8 items-start">
+                        <Image 
+                            src={lyngdalparkering} 
+                            alt="parkering" 
+                            className="object-cover w-full lg:w-[600px] rounded-lg"
+                        />
                         <div className="flex flex-col flex-1">
                             <div className="flex flex-col text-lg md:text-xl text-[#002f67] font-bold">Parkering i Lyngdal</div>
                             <div className="flex flex-col mt-3 text-base md:text-lg font-medium text-[#002f67]">
                                 Det er begrenset med parkeringplasser på selve skytebanen, men det planlegges 2 parkeringsplasser på nærliggende industriområder. 
                             </div>
                         </div>
-                        <Image 
-                            src={lyngdalparkering} 
-                            alt="parkering" 
-                            className="object-cover w-full md:w-[500px] lg:w-[800px] mt-4 lg:mt-0"
-                        />
                     </div>
                 </div>
             </div>
@@ -100,7 +111,7 @@ export default function Veibeskrivelse() {
                 <div className="flex flex-col">
                     <div className="flex flex-col text-xl md:text-2xl text-[#002f67] font-bold">Laudal Skytterlag - Laudal Skytebane</div>
                     <div className="flex flex-col mt-3 text-base md:text-xl font-medium text-[#002f67]">
-                    Laudal skal bygge et helt nytt stang og felthurtig anlegg i løpet av 2024/2025 med utstyr fra Megalink, Skytterhuset har kafeteria med kapasitet på inntil ca 80 personer, det er tilrettelagt tilgang til skytterhuset og toalett for rullestolbrukere. Laudal har internettforbindelse og vil kunne levere live resultater.
+                    Den enkleste måten å komme seg til skytebanen i Laudal er å ta FV455 nordover fra Mandalskrysset (der den nye E39 motorveien begynner/slutter). Etter knappe 20 km er det skiltet avkjøring på Oppsalveien til man kommer til skytebanen etter knappe 4 km. 
                     </div>
                 </div>
                 
@@ -172,18 +183,18 @@ export default function Veibeskrivelse() {
 
         <div className="container mt-10 gap-5 md:gap-10 flex flex-col justify-between items-start">
             <div className="flex flex-col px-4 md:px-32">
-                <div className="flex flex-col lg:flex-row gap-4 lg:gap-8 items-center lg:items-start">
+                <div className="flex flex-col lg:flex-row gap-4 lg:gap-8 items-start">
+                    <Image 
+                        src={laudalparkering} 
+                        alt="parkering" 
+                        className="object-cover w-full lg:w-[600px] rounded-lg"
+                    />
                     <div className="flex flex-col flex-1">
                         <div className="flex flex-col text-lg md:text-xl text-[#002f67] font-bold">Parkering i Laudal</div>
                         <div className="flex flex-col mt-3 text-base md:text-lg font-medium text-[#002f67]">
                             Det er ikke plass til å parkere campingvogner på skytebanen, disse kan parkeres på parkeringsplassen til nedlagt Heidelberg Elementfabrikk som ligger langs FV455 rett før avkjøringen mot skytebanen. For bobiler er det greit å parkere disse på begge sider av innkjørselen til parkeringsplassen til skytebanen, og ellers på anvist plass på skytebanen. 
                         </div>
                     </div>
-                    <Image 
-                        src={laudalparkering} 
-                        alt="parkering" 
-                        className="object-cover w-full md:w-[500px] lg:w-[800px] mt-4 lg:mt-0"
-                    />
                 </div>
             </div>
         </div>
@@ -192,7 +203,7 @@ export default function Veibeskrivelse() {
                 <div className="flex flex-col">
                     <div className="flex flex-col text-xl md:text-2xl text-[#002f67] font-bold">Søgne Skytterlag - Søgne og Greipstad Sparebank Arena</div>
                     <div className="flex flex-col mt-3 text-base md:text-xl font-medium text-[#002f67]">
-                    Flott og moderne skyteanlegg som blir ferdigstilt i 2024 med 10 elektroniske skiver på både 100 og 200 meter fra Kongsberg. Anlegget har store voller på begge sider i skyteretningen på både 100 og 200 meter, noe som gjør at skytteren blir lite utsatt for vind. Anlegget har et moderne og lyst skytterhus med stor takhøyde i kafeteria og god kapasitet for besøkende og livevisning og live resultater under stevnet.
+                    For å komme til den nye utendørsbanen til Søgne tar du av E39 ved Shell stasjonen på Lonelier, herifra er det skiltet gjennom nyetablert industriområde og et skogholt frem til skytebanen. Banen ligger drøye 2 km fra avkjøringen fra E39.
                     </div>
                 </div>
                 
@@ -243,18 +254,18 @@ export default function Veibeskrivelse() {
 
             <div className="container mt-10 gap-5 md:gap-10 flex flex-col justify-between items-start">
             <div className="flex flex-col px-4 md:px-32">
-                <div className="flex flex-col lg:flex-row gap-4 lg:gap-8 items-center lg:items-start">
+                <div className="flex flex-col lg:flex-row gap-4 lg:gap-8 items-start">
+                    <Image 
+                        src={sogneparkering} 
+                        alt="parkering" 
+                        className="object-cover w-full lg:w-[600px] rounded-lg"
+                    />
                     <div className="flex flex-col flex-1">
                         <div className="flex flex-col text-lg md:text-xl text-[#002f67] font-bold">Parkering i Søgne</div>
                         <div className="flex flex-col mt-3 text-base md:text-lg font-medium text-[#002f67]">
                             Skytebanen har begrenset med parkering, og ingen plass til campingvogner, campingvogner må parkeres på anvist parkering som vil bli avklart på et sener tidspunkt. 
                         </div>
                     </div>
-                    <Image 
-                        src={sogneparkering} 
-                        alt="parkering" 
-                        className="object-cover w-full md:w-[500px] lg:w-[800px] mt-4 lg:mt-0"
-                    />
                 </div>
             </div>
         </div>
@@ -263,7 +274,7 @@ export default function Veibeskrivelse() {
                 <div className="flex flex-col">
                     <div className="flex flex-col text-xl md:text-2xl text-[#002f67] font-bold">Kristiansand og Omegn Skytterlag - Farvannet Skytebane</div>
                     <div className="flex flex-col mt-3 text-base md:text-xl font-medium text-[#002f67]">
-                        Farvannet skytebane er et moderne anlegg fra 2013 med stor kapasitet på elektroniske skiver, 20 på 100m og 25 skiver på 200m i tillegg til elektronisk stang og felthurtig anlegg, alt fra Megalink. Banene og bygningsmassen er meget godt ivaretatt og vedlikeholdt, skytterhuset har en stor kafeteria som i de senere år har blitt påbygd med en stor veranda for ytterligere kapasitet, det vil være livevisning og resultater på skytterhuset.
+                    Skytebanen på Farvannet ligger på Østre Ålefjærvei 261. Den beste veien går fra Timeneskrysset på E18 øst for byen, langs RV41 til Ryenkrysset(ca 8 kilometer), herifra tar du til venstre inn på Østre Ålefjærvei og følger denne (ca 4 km) frem til skytebanen. Det vil være skiltet fra Timeneskrysset.
                     </div>
                 </div>
                 
@@ -335,22 +346,22 @@ export default function Veibeskrivelse() {
 
         <div className="container mt-10 gap-5 md:gap-10 flex flex-col justify-between items-start">
             <div className="flex flex-col px-4 md:px-32">
-                <div className="flex flex-col lg:flex-row gap-4 lg:gap-8 items-center lg:items-start">
+                <div className="flex flex-col lg:flex-row gap-4 lg:gap-8 items-start">
+                    <Image 
+                        src={kristiansandparkering} 
+                        alt="parkering" 
+                        className="object-cover w-full lg:w-[650px] rounded-lg"
+                    />
                     <div className="flex flex-col flex-1">
                         <div className="flex flex-col text-lg md:text-xl text-[#002f67] font-bold">Parkering i Kristiansand</div>
                         <div className="flex flex-col mt-3 text-base md:text-lg font-medium text-[#002f67]">
                             Det er stor parkeringsplass på Farvannet med plass til bobiler og campingvogner for dem som har med seg dette. Det er kort avstand fra parkeringsplassen til skytterhus og standplassene. Skytter med nedsatt bevegelighet kan kontakte arrangøren for å få henvist parkering umiddelbart utenfor standplass, øvrige parkerer på stor grus parkeringsplass.
                         </div>
                     </div>
-                    <Image 
-                        src={kristiansandparkering} 
-                        alt="parkering" 
-                        className="object-cover w-full md:w-[500px] lg:w-[800px] mt-4 lg:mt-0"
-                    />
                 </div>
             </div>
 
-            <div className="container mt-10 gap-5 md:gap-10 flex flex-col justify-between items-start">
+            <div className="container mt-5 gap-5 md:gap-10 flex flex-col justify-between items-start">
                 <div className="flex flex-col px-4 md:px-32">
                     <div className="flex flex-row gap-8 items-start">
                         <div className="flex flex-col flex-1">
