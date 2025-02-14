@@ -47,7 +47,7 @@ export default function Navbar() {
                             onClick={() => setIsMenuOpen(false)} 
                             className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm"
                         >
-                            Live
+                            DirekteSending
                         </Link>
                         <Link 
                             href="/resultater" 
@@ -125,13 +125,13 @@ export default function Navbar() {
                 <div className={`w-screen z-10 bg-indigo-100 left-0 overflow-hidden transition-all duration-300 ease-in-out ${isPåmeldingOpen ? 'max-h-[500px]' : 'max-h-0'}`}>
                     <nav className="flex flex-col justify-center items-center">
                         <div className="container py-4 flex flex-col gap-2">
-                            <Link 
-                                href="https://www.mittdfs.no/hovedside/aktuelt-na/arrangementskalender/pamelding/?eventId=25811&arrType=STEVNE" 
+                        <Link 
+                                href="https://www.mittdfs.no/hovedside/aktuelt-na/arrangementskalender/pamelding/?eventId=25831&arrType=STEVNE" 
                                 target="_blank" 
                                 onClick={() => setIsPåmeldingOpen(false)}
                                 className="text-indigo-700 hover:bg-indigo-200 px-4 py-2 rounded-md text-sm"
                             >
-                                Online Påmelding: Kristiansand bane
+                                Lyngdal bane
                             </Link>
                             <Link 
                                 href="https://www.mittdfs.no/hovedside/aktuelt-na/arrangementskalender/pamelding/?eventId=25813&arrType=STEVNE" 
@@ -139,15 +139,41 @@ export default function Navbar() {
                                 onClick={() => setIsPåmeldingOpen(false)}
                                 className="text-indigo-700 hover:bg-indigo-200 px-4 py-2 rounded-md text-sm"
                             >
-                                Online Påmelding: Søgne bane
+                                Søgne bane
                             </Link>
+                            <Link 
+                                href="https://www.mittdfs.no/hovedside/aktuelt-na/arrangementskalender/pamelding/?eventId=25811&arrType=STEVNE" 
+                                target="_blank" 
+                                onClick={() => setIsPåmeldingOpen(false)}
+                                className="text-indigo-700 hover:bg-indigo-200 px-4 py-2 rounded-md text-sm"
+                            >
+                                Kristiansand bane
+                            </Link>
+                            
+                            <Link 
+                                href=" https://www.mittdfs.no/hovedside/aktuelt-na/arrangementskalender/pamelding/?eventId=25828&arrType=STEVNE" 
+                                target="_blank" 
+                                onClick={() => setIsPåmeldingOpen(false)}
+                                className="text-indigo-700 hover:bg-indigo-200 px-4 py-2 rounded-md text-sm"
+                            >
+                                Laudal 1 Stang og Felthurtig
+                            </Link>
+                            <Link 
+                                href="https://www.mittdfs.no/hovedside/aktuelt-na/arrangementskalender/pamelding/?eventId=25829&arrType=STEVNE" 
+                                target="_blank" 
+                                onClick={() => setIsPåmeldingOpen(false)}
+                                className="text-indigo-700 hover:bg-indigo-200 px-4 py-2 rounded-md text-sm"
+                            >
+                                Laudal 2 Stang og Felthurtig
+                            </Link>
+                            
                             <Link 
                                 href="https://www.mittdfs.no/hovedside/aktuelt-na/arrangementskalender/pamelding/?eventId=25812&arrType=STEVNE" 
                                 target="_blank" 
                                 onClick={() => setIsPåmeldingOpen(false)}
                                 className="text-indigo-700 hover:bg-indigo-200 px-4 py-2 rounded-md text-sm"
                             >
-                                Online Påmelding: Kristiansand Stang og Felthurtig
+                                Kristiansand Stang og Felthurtig
                             </Link>
                             {/* Add more påmelding-related links here if needed */}
                         </div>
@@ -157,7 +183,7 @@ export default function Navbar() {
 
             <div className=" hidden w-full xl:flex justify-center items-center bg-indigo-100">
                 <div className="container flex flex-wrap justify-between item-center py-3 font-bold uppercase">
-                <Link href="/livestream" className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">Live</Link>
+                <Link href="/livestream" className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">DirekteSending</Link>
                     <Link href="/resultater" className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">Resultater</Link>
                     <Link href="/stevneinfo" className="text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200">Stevneinfo</Link>
                     <Link 
