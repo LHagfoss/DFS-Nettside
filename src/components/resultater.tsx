@@ -4,7 +4,7 @@ export default function Resultater() {
     //const SøgneLink = "https://res.megalink.no/event/asheim-skl/StartFrame.htm" //OPPDATER!!
     //const KristiansandLink = "https://livevisning.com/lismarken/NC_Bane_Lismarken_2024/index1.html#" //OPPDATER!!
     return(
-        <div className=" w-screen h-screen mt-40 flex flex-col items-center p-14">
+        <div className=" w-screen h-screen mt-20 md:mt-40 flex flex-col items-center p-14">
         <div className=" flex justify-between container">
             <h1 className="text-2xl sm:text-4xl leading-[90%] mb-4 flex font-bold">Resultater Bane</h1>
         </div>
@@ -38,7 +38,7 @@ export default function Resultater() {
             </div>
         </div>
         <div className=" flex justify-between container">
-            <h1 className="text-2xl sm:text-3xl leading-[90%] mb-4 flex font-bold">Resultater stang og felthurtig</h1>
+            <h1 className=" md:mt-6 mt-16 text-2xl sm:text-3xl leading-[90%] mb-4 flex font-bold">Resultater stang og felthurtig</h1>
         </div>
         <div className="w-screen h-12 bg-indigo-400 flex justify-center text-lg sm:text-2xl leading-[90%] items-center">
             <div className=" flex justify-between container text-white">
@@ -48,7 +48,7 @@ export default function Resultater() {
             </div>
 
         </div>
-        <div className="w-screen h-12 flex justify-center text-lg sm:text-2xl leading-[90%] items-center">
+        <div className=" w-screen h-12 flex justify-center text-lg sm:text-2xl leading-[90%] items-center">
                 <div className=" flex justify-between container">
                {/* <a href={LyngdalLink} className="flex-1">Resultat</a>
                 <a href={SøgneLink} className="flex-1 flex justify-center">Resultat</a>
