@@ -10,13 +10,7 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
-  {
-    ignores: ["**/*"],
-    linterOptions: {
-      reportUnusedDisableDirectives: false,
-      noInlineConfig: false,
-    },
-  },
+  ...compat.extends("next/core-web-vitals", "next/typescript"),
 ];
 
 export default eslintConfig;

@@ -58,13 +58,6 @@ export default function Navbar() {
                             DirekteSending
                         </Link>
                         <Link 
-                            href="/nyheter" 
-                            onClick={handleNavClick} 
-                            className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm"
-                        >
-                            Nyheter
-                        </Link>
-                        <Link 
                             href="/resultater" 
                             onClick={handleNavClick} 
                             className="text-white hover:bg-indigo-600 px-4 py-2 rounded-md text-sm"
@@ -202,14 +195,6 @@ export default function Navbar() {
                 >
                     DirekteSending
                 </Link>
-                <Link 
-                    href="/nyheter" 
-                    onClick={handleNavClick} 
-                    className={`text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200 
-                    ${pathname === "/nyheter" ? "text-indigo-500 underline" : "underline-none"}`}
-                >
-                    Nyheter
-                </Link>
                     <Link href="/resultater" onClick={handleNavClick} className={`text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200 ${pathname === "/resultater" ? "text-indigo-500 underline" : "underline-none"}`}>Resultater</Link>
                     <Link href="/stevneinfo" onClick={handleNavClick} className={`text-indigo-600 hover:text-indigo-500 hover:underline underline-offset-8 px-3 py-2 rounded-md text-sm active:scale-90 duration-200 ${pathname === "/stevneinfo" ? "text-indigo-500 underline" : "underline-none"}`}>Stevneinfo</Link>
                     <Link 
@@ -258,7 +243,7 @@ export default function Navbar() {
                             >
                                 Kristiansand bane
                             </Link>
-                            <hr />
+                            
                             <Link 
                                 href=" https://www.mittdfs.no/hovedside/aktuelt-na/arrangementskalender/pamelding/?eventId=25828&arrType=STEVNE" 
                                 target="_blank" 

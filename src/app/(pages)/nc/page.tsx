@@ -3,7 +3,7 @@ import Nc from "@/components/nc";
 export default function Home(){
     return(
         <div>
-        <title>NC 2025 - Runde 1 | NC</title>
+        <title>DFS-Nettside | NC</title>
         <Nc />
         </div>
     )

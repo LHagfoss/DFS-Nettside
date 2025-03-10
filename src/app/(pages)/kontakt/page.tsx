@@ -8,9 +8,9 @@ import logoKristiansand from '@/public/logo2.png';
 
 export default function Kontakt() {
   return (
-    <main className="w-full min-h-screen p-10 flex justify-center items-start">
-        <title>NC 2025 - Runde 1 | Kontakt Oss</title>
-        <div className="mt-36 container grid grid-cols-2 gap-4">
+    <main className="w-full h-screen p-10 pt-44 bg-gray-100 flex justify-center items-center">
+        <title>DFS-Nettside | Kontakt Oss</title>
+        <div className="container grid grid-cols-2 gap-4 h-full">
             <div className="contact-person bg-zinc-100 p-10 rounded-3xl shadow mb-4 h-full">
                 <Image src={logoLyngdal} alt="Lyngdal Logo" width={100} height={100} />
                 <h1 className="text-2xl font-bold">Lyngdal Skyttelag</h1>

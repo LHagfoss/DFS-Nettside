@@ -1,6 +1,4 @@
 import { NextResponse } from 'next/server';
-import chromium from '@sparticuz/chromium';
-import type { Browser } from 'puppeteer-core';
 
 interface ScrapedArticle {
   title: string;
@@ -13,95 +11,102 @@ interface ScrapedArticle {
 
 let cachedData: ScrapedArticle[] | null = null;
 let lastFetchTime: number = 0;
-let retryCount = 0;
-const MAX_RETRIES = 3;
-const RETRY_DELAY = 1000;
-
-const wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 export async function GET() {
   const now = Date.now();
   const fiveMinutes = 1 * 60 * 1000;
 
   if (cachedData && now - lastFetchTime < fiveMinutes) {
-    return NextResponse.json({ data: cachedData });
-  }
-
-  if (!process.env.BROWSERLESS_TOKEN) {
-    console.error('BROWSERLESS_TOKEN environment variable is not set');
-    return NextResponse.json(
-      { 
-        data: [], 
-        error: 'Server configuration error', 
-        details: 'Missing BROWSERLESS_TOKEN environment variable'
-      }, 
-      { status: 500 }
-    );
-  }
-
-  async function attemptScrape() {
-    const puppeteer = (await import('puppeteer-core')).default;
-    const browser: Browser = await puppeteer.launch({
-      args: chromium.args,
-      defaultViewport: chromium.defaultViewport,
-      executablePath: await chromium.executablePath(),
-      headless: chromium.headless,
-      ignoreHTTPSErrors: true,
+    return NextResponse.json(cachedData, {
+      headers: {
+        'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=59'
+      }
     });
-
-    try {
-      const page = await browser.newPage();
-      await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36');
-      
-      await page.goto('https://dfs.no/nc-2025-runde-1', {
-        waitUntil: 'networkidle0',
-        timeout: 30000,
-      });
-
-      const results = await page.evaluate(() => {
-        const articles = Array.from(document.querySelectorAll('article.article-preview'));
-        return articles.map(article => ({
-          title: article.querySelector('.article-preview__title span')?.textContent?.trim() || '',
-          content: article.querySelector('.article-preview__text p')?.textContent?.trim() || '',
-          imageUrl: article.querySelector('.article-preview__image img')?.getAttribute('src') || '',
-          author: article.querySelector('.article-preview__author a')?.textContent?.trim() || '',
-          date: article.querySelector('.article-preview__date')?.textContent?.trim() || '',
-          articleUrl: article.querySelector('a.article-preview__link')?.getAttribute('href') 
-            ? `https://dfs.no${article.querySelector('a.article-preview__link')?.getAttribute('href')}`
-            : ''
-        }));
-      });
-
-      await browser.close();
-      return results;
-    } catch (error) {
-      await browser.close();
-      throw error;
-    }
   }
 
   try {
-    while (retryCount < MAX_RETRIES) {
-      try {
-        const results = await attemptScrape();
-        cachedData = results;
-        lastFetchTime = now;
-        retryCount = 0; // Reset retry count on success
-        return NextResponse.json({ data: results });
-      } catch (error) {
-        retryCount++;
-        if (error.message.includes('429')) {
-          console.log(`Rate limited, attempt ${retryCount} of ${MAX_RETRIES}`);
-          if (retryCount < MAX_RETRIES) {
-            await wait(RETRY_DELAY * retryCount);
-            continue;
-          }
+    const axiosData = await fetchWithAxios();
+    
+    if (axiosData.length > 0) {
+      cachedData = axiosData;
+      lastFetchTime = now;
+      return NextResponse.json(cachedData, {
+        headers: {
+          'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=59'
         }
-        throw error;
-      }
+      });
     }
+
+    const puppeteerData = await fetchWithPuppeteer();
+    cachedData = puppeteerData;
+    lastFetchTime = now;
+
+    return NextResponse.json(cachedData, {
+      headers: {
+        'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=59'
+      }
+    });
   } catch (error) {
     console.error('Scraping failed:', error);
-    return NextResponse.json({ data: [], error: 'Scraping failed', details: error.message }, { status: 500 });
+    return NextResponse.json(
+      [],
+      { 
+        status: 500,
+        headers: {
+          'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=59'
+        }
+      }
+    );
   }
+}
+
+async function fetchWithAxios(): Promise<ScrapedArticle[]> {
+  const { default: axios } = await import('axios');
+
+  const response = await axios.get('https://dfs.no/nc-2025-runde-1', {
+    headers: {
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+      'Accept-Language': 'en-US,en;q=0.9',
+      'Cookie': 'cookie_consent=true'
+    }
+  });
+
+  return parseHTML(response.data);
+}
+
+async function fetchWithPuppeteer(): Promise<ScrapedArticle[]> {
+  const { default: puppeteer } = await import('puppeteer');
+  
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  
+  await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36');
+  await page.goto('https://dfs.no/nc-2025-runde-1', { waitUntil: 'networkidle2' });
+  
+  const content = await page.content();
+  await browser.close();
+
+  return parseHTML(content);
+}
+
+async function parseHTML(html: string): Promise<ScrapedArticle[]> {
+  const { load } = await import('cheerio');
+  const $ = load(html);
+  const results: ScrapedArticle[] = [];
+
+  $('article.article-preview').each((_: number, element) => {
+    const $el = $(element);
+    const articleUrl = $el.find('a.article-preview__link').attr('href');
+    
+    results.push({
+      title: $el.find('.article-preview__title span').text().trim(),
+      content: $el.find('.article-preview__text p').first().text().trim(),
+      imageUrl: $el.find('.article-preview__image img').attr('src') || '',
+      author: $el.find('.article-preview__author a').text().trim(),
+      date: $el.find('.article-preview__date').text().trim(),
+      articleUrl: articleUrl ? `https://dfs.no${articleUrl}` : ''
+    });
+  });
+
+  return results;
 }
