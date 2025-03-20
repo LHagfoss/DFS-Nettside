@@ -1,7 +1,7 @@
 
 import Image from "next/image"
 
-import arosActivityimage from "@/public/bildefraaros.jpg"
+import arosActivityimage from "@/public/aros.png"
 import Link from "next/link";
 export default function Overnatting() {
     return (
