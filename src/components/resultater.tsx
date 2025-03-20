@@ -12,7 +12,7 @@ export default function Resultater() {
             <div className=" flex justify-between container text-white">
             <p className="flex-1">Lyngdal</p>
             <p className="flex-1 flex justify-center">Søgne</p>
-            <p className="flex-1 flex justify-end">Kristiansand og Omegn</p>
+                <p className="flex-1 flex justify-end">Kristiansand og Omegn</p>
             </div>
 
         </div>
@@ -27,9 +27,10 @@ export default function Resultater() {
 
         <div className="w-screen h-12 flex justify-center text-lg sm:text-2xl leading-[90%] items-center">
             <div className=" flex justify-between container">
-            <a href="https://www.livevisning.com/elverum/NC%20Elverum%202024%201%20runde%20bane/index1.html#" className="flex-1">Livevisning</a>
-            <a href="https://res.megalink.no/event/asheim-skl/StartFrame.htm" className="flex-1 flex justify-center">Livevisning</a>
-            <a href ="https://live.megalink.no/#!/kristiansand-og-omegn-skl" target="blank_" className="flex-1 flex justify-end">Livevisning</a>                </div>
+            <a href="" className="flex-1">Livevisning</a>
+            <a href="" className="flex-1 flex justify-center">Livevisning</a> 
+            <a href ="https://live.megalink.no/#!/kristiansand-og-omegn-skl" target="blank_" className="flex-1 flex justify-end">Livevisning</a>       
+             </div>
             </div>
             
         <div className="w-screen h-12 bg-indigo-400 flex justify-center text-lg sm:text-2xl leading-[90%] items-center">
@@ -58,9 +59,10 @@ export default function Resultater() {
 
         <div className="w-screen h-12 flex justify-center text-lg sm:text-2xl leading-[90%] items-center">
             <div className=" flex justify-between container">
-            <a href="https://www.livevisning.com/elverum/NC%20Elverum%202024%201%20runde%20bane/index1.html#" className="flex-1">Livevisning</a>
-            <a href="https://res.megalink.no/event/asheim-skl/StartFrame.htm" className="flex-1 flex justify-center">Livevisning</a>
-            <a href ="https://live.megalink.no/#!/kristiansand-og-omegn-skl" target="blank_" className="flex-1 flex justify-end">Livevisning</a>                </div>
+            <a href="" className="flex-1">Livevisning</a>
+            <a href="" className="flex-1 flex justify-center">Livevisning</a>
+            <a href ="https://live.megalink.no/#!/kristiansand-og-omegn-skl" target="blank_" className="flex-1 flex justify-end">Livevisning</a>            
+            </div>
             </div>
             
         <div className="w-screen h-12 bg-indigo-400 flex justify-center text-lg sm:text-2xl leading-[90%] items-center">
