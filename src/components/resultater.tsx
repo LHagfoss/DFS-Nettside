@@ -27,9 +27,9 @@ export default function Resultater() {
 
         <div className="w-screen h-12 flex justify-center text-lg sm:text-2xl leading-[90%] items-center">
             <div className=" flex justify-between container">
-            <a href="" className="flex-1">Livevisning</a> --lyngdal
-            <a href="" className="flex-1 flex justify-center">Livevisning</a> --søgne
-            <a href ="https://live.megalink.no/#!/kristiansand-og-omegn-skl" target="blank_" className="flex-1 flex justify-end">Livevisning</a>    --kristiansand og omegn           
+            <a href="" className="flex-1">Livevisning</a>
+            <a href="" className="flex-1 flex justify-center">Livevisning</a> 
+            <a href ="https://live.megalink.no/#!/kristiansand-og-omegn-skl" target="blank_" className="flex-1 flex justify-end">Livevisning</a>       
              </div>
             </div>
             
@@ -59,9 +59,9 @@ export default function Resultater() {
 
         <div className="w-screen h-12 flex justify-center text-lg sm:text-2xl leading-[90%] items-center">
             <div className=" flex justify-between container">
-            <a href="" className="flex-1">Livevisning</a> --Laudal 1
-            <a href="" className="flex-1 flex justify-center">Livevisning</a>--laudal 2
-            <a href ="https://live.megalink.no/#!/kristiansand-og-omegn-skl" target="blank_" className="flex-1 flex justify-end">Livevisning</a>    --kristiansand og omegn            
+            <a href="" className="flex-1">Livevisning</a>
+            <a href="" className="flex-1 flex justify-center">Livevisning</a>
+            <a href ="https://live.megalink.no/#!/kristiansand-og-omegn-skl" target="blank_" className="flex-1 flex justify-end">Livevisning</a>            
             </div>
             </div>
             
