@@ -9,7 +9,7 @@ import Link from "next/link";
 
 export default function Veibeskrivelse() {
   return (
-    <div className="w-full flex flex-col justify-center items-center mt-24 md:mt-52 px-4 md:px-0">
+    <div className="w-full max-w-7xl flex flex-col justify-center items-center mt-24 md:mt-52 px-4 md:px-0">
       <div className="container gap-5 md:gap-10 flex flex-col-reverse md:flex-row justify-between items-center md:items-start px-4 md:px-32">
         <Image
           src={sorlandet}
