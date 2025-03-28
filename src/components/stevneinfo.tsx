@@ -4,7 +4,7 @@ import Tidsplan from "@/public/tidsplan.jpg";
 
 export default function Stevneinfo() {
   return (
-    <div className="w-full max-w-7xl mt-20 mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+    <div className="w-full max-w-5xl mt-20 mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
     
       <div className="space-y-8 sm:space-y-12">
         <div className="flex flex-col items-center">
@@ -32,7 +32,7 @@ export default function Stevneinfo() {
           <Image
             src={Tidsplan}
             alt="Tidsplan"
-            className="w-full max-w-3xl rounded-lg shadow-lg"
+            className="w-full max-w-4xl rounded-lg shadow-lg"
             priority
           />
         </div>

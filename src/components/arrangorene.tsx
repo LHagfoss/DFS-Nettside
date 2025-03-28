@@ -28,8 +28,8 @@ export default function Arrangorene() {
   };
 
   return (
-    <div className="w-full flex flex-col justify-center items-center mt-16 sm:mt-20 md:mt-32 lg:mt-52 px-2 sm:px-4 md:px-0">
-      <div className="w-full max-w-[1440px] grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 md:gap-8 lg:gap-10 px-2 sm:px-4 md:px-16 lg:px-32">
+    <div className="w-full max-w-7xl mx-auto flex flex-col justify-center items-center mt-20 sm:mt-20 md:mt-32 lg:mt-52 px-2 sm:px-4 md:px-0">
+      <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 md:gap-8 lg:gap-10 px-2 sm:px-4 md:px-16 lg:px-32">
         <div className="flex flex-col items-center">
           <Image
             src={lyngdallogo}

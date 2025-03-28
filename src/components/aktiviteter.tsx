@@ -1,10 +1,8 @@
-import Image from "next/image";
-
 export default function Aktiviteter() {
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 mt-20 sm:mt-24 lg:mt-32">
+    <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 mt-20 sm:mt-24 lg:mt-32">
       <div className="prose prose-lg text-[#002f67] max-w-none">
-        <p className="text-base sm:text-lg lg:text-xl text-center sm:text-left leading-relaxed">
+        <p className="text-lg sm:text-xl lg:text-2xl text-center sm:text-left leading-relaxed">
           Senvåren/tidlig sommer på Sørlandet er fantastisk, så vi håper
           skytterne tar med seg familien og tar en langhelg med skyting og
           opplevelser nede på solkysten. Vi har samlet noen aktuelle lenker
@@ -12,6 +10,8 @@ export default function Aktiviteter() {
           <a
             href="https://www.visitsorlandet.com/"
             className="text-blue-600 hover:text-blue-800 hover:underline break-words"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             https://www.visitsorlandet.com/
           </a>
@@ -30,6 +30,8 @@ export default function Aktiviteter() {
                   <a
                     href="https://under.no/"
                     className="text-blue-600 hover:text-blue-800 hover:underline break-words"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     https://under.no/
                   </a>
@@ -39,6 +41,8 @@ export default function Aktiviteter() {
                   <a
                     href="https://sorlandsbadet.no/"
                     className="text-blue-600 hover:text-blue-800 hover:underline break-words"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     https://sorlandsbadet.no/
                   </a>
@@ -48,6 +52,8 @@ export default function Aktiviteter() {
                   <a
                     href="https://kvasfossen.no/"
                     className="text-blue-600 hover:text-blue-800 hover:underline break-words"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     https://kvasfossen.no/
                   </a>
@@ -66,6 +72,8 @@ export default function Aktiviteter() {
                   <a
                     href="https://hoytlavt.no/kristiansand/"
                     className="text-blue-600 hover:text-blue-800 hover:underline break-words"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     https://hoytlavt.no/kristiansand/
                   </a>
@@ -75,6 +83,8 @@ export default function Aktiviteter() {
                   <a
                     href="https://ut.no/turforslag/1112159758/sherpahytta-dagsturhytta-i-lyngdal-kommune?fbclid=IwZXh0bgNhZW0CMTAAAR1d8d08KDPqIDxfiATcUdNxP8dEnKedp1BkZXcahpBixhzqMdDxsMoKZlA_aem_cPMYWfcu4ZjbEp3hiCCBaQ"
                     className="text-blue-600 hover:text-blue-800 hover:underline break-words"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     https://ut.no/turforslag/1112159758/sherpahytta-dagsturhytta-i-lyngdal-kommune
                   </a>
@@ -95,6 +105,8 @@ export default function Aktiviteter() {
                   <a
                     href="https://www.adventurenorway.net/ "
                     className="text-blue-600 hover:text-blue-800 hover:underline break-words"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     https://www.adventurenorway.net/
                   </a>
@@ -104,6 +116,8 @@ export default function Aktiviteter() {
                   <a
                     href="https://www.facebook.com/MarnarLaksesenter/"
                     className="text-blue-600 hover:text-blue-800 hover:underline break-words"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     https://www.facebook.com/MarnarLaksesenter/
                   </a>
@@ -113,6 +127,8 @@ export default function Aktiviteter() {
                   <a
                     href="https://www.lindlandgård.no/"
                     className="text-blue-600 hover:text-blue-800 hover:underline break-words"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     https://www.lindlandgård.no/
                   </a>
@@ -122,6 +138,8 @@ export default function Aktiviteter() {
                   <a
                     href="https://www.visitsorlandet.com/destinasjoner/mandal-lindesnes/"
                     className="text-blue-600 hover:text-blue-800 hover:underline break-words"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     https://www.visitsorlandet.com/destinasjoner/mandal-lindesnes/
                   </a>
@@ -142,6 +160,8 @@ export default function Aktiviteter() {
                   <a
                     href="https://www.tangvallarena.no/"
                     className="text-blue-600 hover:text-blue-800 hover:underline break-words"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     https://www.tangvallarena.no/
                   </a>
@@ -151,6 +171,8 @@ export default function Aktiviteter() {
                   <a
                     href="https://www.visitnorway.no/reisemal/sorlandet/kristiansand/listings-kristiansand/ny-hellesund/223867/"
                     className="text-blue-600 hover:text-blue-800 hover:underline break-words"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     https://www.visitnorway.no/reisemal/sorlandet/kristiansand/listings-kristiansand/ny-hellesund/223867/
                   </a>
@@ -160,6 +182,8 @@ export default function Aktiviteter() {
                   <a
                     href="https://www.sognegamleprestegard.no/?fbclid=IwZXh0bgNhZW0CMTAAAR3P1DCLqzb10DYMeVs8lvgUmL_1mufCYsYv5LPw1DdAtG0LlSVp28nfPfM_aem_NGltKLEhgeAGDMZesZebmw"
                     className="text-blue-600 hover:text-blue-800 hover:underline break-words"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     https://www.sognegamleprestegard.no/
                   </a>
@@ -170,6 +194,8 @@ export default function Aktiviteter() {
                   <a
                     href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.aaros.no%2F%3Ffbclid%3DIwZXh0bgNhZW0CMTAAAR1RNgxBy3J5vNRiE-cGAWOaO9jKY2GqeAGrhRw_qcCxVLj56AYheG8_i4o_aem_Fil1Zt_ZXEXTHtV4kHdqFQ&h=AT2IgMA6Nz3X8WZQo1D1meL0M2E1gjXoouRZlQ0aBn2-yb1F-xHp1eu86B9OH5DrgaSXlNsSTe2vVbNzFuHQYDuDvuOnHUiVpFZjNCupQSeZo-pDXWjdPjv0fxC1-GVhJZsx_VwG"
                     className="text-blue-600 hover:text-blue-800 hover:underline break-words"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     https://www.aaros.no/
                   </a>
@@ -180,6 +206,8 @@ export default function Aktiviteter() {
                   <a
                     href="https://skagenpub.no/?fbclid=IwZXh0bgNhZW0CMTAAAR1Nk1c_6ILQJ6Xn6oGJqNpKXNSDUBwDcZZsrKrSmLVbMjD45MrCroaRH-8_aem_tRWuoWrMhgC6z4fICivbPA"
                     className="text-blue-600 hover:text-blue-800 hover:underline break-words"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     https://skagenpub.no/
                   </a>
@@ -189,6 +217,8 @@ export default function Aktiviteter() {
                   <a
                     href="https://skanav.no/Ruteplan-S%C3%B8gne.html?fbclid=IwZXh0bgNhZW0CMTAAAR1RNgxBy3J5vNRiE-cGAWOaO9jKY2GqeAGrhRw_qcCxVLj56AYheG8_i4o_aem_Fil1Zt_ZXEXTHtV4kHdqFQ"
                     className="text-blue-600 hover:text-blue-800 hover:underline break-words"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     https://skanav.no/Ruteplan-S%C3%B8gne.html
                   </a>
@@ -198,6 +228,8 @@ export default function Aktiviteter() {
                   <a
                     href="https://aarosridesenter.no/?fbclid=IwZXh0bgNhZW0CMTAAAR1d8d08KDPqIDxfiATcUdNxP8dEnKedp1BkZXcahpBixhzqMdDxsMoKZlA_aem_cPMYWfcu4ZjbEp3hiCCBaQ"
                     className="text-blue-600 hover:text-blue-800 hover:underline break-words"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     https://aarosridesenter.no/
                   </a>
@@ -207,6 +239,8 @@ export default function Aktiviteter() {
                   <a
                     href="https://www.sogneklatreklubb.no/?fbclid=IwZXh0bgNhZW0CMTAAAR0OF27BMac0fl6LIY8oiK1v6cTc5NOM3ENAQZENk5zNgWg8zIDJnpcUJAA_aem_4gUXeZvEHQh0kTqoeSXFQg"
                     className="text-blue-600 hover:text-blue-800 hover:underline break-words"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     https://www.sogneklatreklubb.no/
                   </a>
@@ -216,6 +250,8 @@ export default function Aktiviteter() {
                   <a
                     href="https://www.tangvallarena.no/?fbclid=IwZXh0bgNhZW0CMTAAAR0OF27BMac0fl6LIY8oiK1v6cTc5NOM3ENAQZENk5zNgWg8zIDJnpcUJAA_aem_4gUXeZvEHQh0kTqoeSXFQg"
                     className="text-blue-600 hover:text-blue-800 hover:underline break-words"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     https://www.tangvallarena.no/
                   </a>
@@ -225,6 +261,8 @@ export default function Aktiviteter() {
                   <a
                     href="https://www.visitsorlandet.com/listing/turl%C3%B8yper-i-s%C3%B8gne/139786306/?fbclid=IwZXh0bgNhZW0CMTAAAR1JUIrJUjRN3_Wu9S9F5cQUX0s-xvdwjKSF7g2x2EWHN7aciy_kMEShlxk_aem_aRKojO7ETcOmNgfBxg7JJA"
                     className="text-blue-600 hover:text-blue-800 hover:underline break-words"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     https://www.visitsorlandet.com/listing/turl%C3%B8yper-i-s%C3%B8gne/139786306/
                   </a>
@@ -234,6 +272,8 @@ export default function Aktiviteter() {
                   <a
                     href="https://www.sognegamleprestegard.no/?fbclid=IwZXh0bgNhZW0CMTAAAR3P1DCLqzb10DYMeVs8lvgUmL_1mufCYsYv5LPw1DdAtG0LlSVp28nfPfM_aem_NGltKLEhgeAGDMZesZebmw"
                     className="text-blue-600 hover:text-blue-800 hover:underline break-words"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     https://www.sognegamleprestegard.no/
                   </a>
@@ -254,6 +294,8 @@ export default function Aktiviteter() {
                   <a
                     href="https://www.dyreparken.no/"
                     className="text-blue-600 hover:text-blue-800 hover:underline break-words"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     https://www.dyreparken.no/
                   </a>
@@ -263,6 +305,8 @@ export default function Aktiviteter() {
                   <a
                     href="https://www.aquarama.no/"
                     className="text-blue-600 hover:text-blue-800 hover:underline break-words"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     https://www.aquarama.no/
                   </a>
@@ -272,6 +316,8 @@ export default function Aktiviteter() {
                   <a
                     href="https://www.vestagdermuseet.no/kanonmuseum/"
                     className="text-blue-600 hover:text-blue-800 hover:underline break-words"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     https://www.vestagdermuseet.no/kanonmuseum/
                   </a>
@@ -281,6 +327,8 @@ export default function Aktiviteter() {
                   <a
                     href="https://www.kunstsilo.no/"
                     className="text-blue-600 hover:text-blue-800 hover:underline break-words"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     https://www.kunstsilo.no/
                   </a>
@@ -290,6 +338,8 @@ export default function Aktiviteter() {
                   <a
                     href="https://hoytlavt.no/kristiansand/"
                     className="text-blue-600 hover:text-blue-800 hover:underline break-words"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     https://alti.no/lyngdal/
                   </a>
@@ -299,6 +349,8 @@ export default function Aktiviteter() {
                   <a
                     href="https://www.nfkino.no/?city=kristiansands"
                     className="text-blue-600 hover:text-blue-800 hover:underline break-words"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     https://www.nfkino.no/?city=kristiansands
                   </a>
@@ -308,6 +360,8 @@ export default function Aktiviteter() {
                   <a
                     href="https://sorlandssenteret.no/"
                     className="text-blue-600 hover:text-blue-800 hover:underline break-words"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     https://sorlandssenteret.no/
                   </a>
@@ -317,6 +371,8 @@ export default function Aktiviteter() {
                   <a
                     href="https://www.facebook.com/labbeturer/"
                     className="text-blue-600 hover:text-blue-800 hover:underline break-words"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     https://www.facebook.com/labbeturer/
                   </a>
@@ -326,6 +382,8 @@ export default function Aktiviteter() {
                   <a
                     href="https://www.visitsorlandet.com/destinasjoner/kristiansand/"
                     className="text-blue-600 hover:text-blue-800 hover:underline break-words"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     https://www.visitsorlandet.com/destinasjoner/kristiansand/
                   </a>
