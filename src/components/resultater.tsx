@@ -27,8 +27,8 @@ export default function Resultater() {
 
         <div className="w-screen h-12 flex justify-center text-lg sm:text-2xl leading-[90%] items-center">
             <div className=" flex justify-between container">
-            <a href="" className="flex-1">Ikke fungerende</a>
-            <a href="" className="flex-1 flex justify-center">Ikke fungerende</a> 
+            <a href="" className="flex-1 text-white">Ikke fungerende</a>
+            <a href="" className="flex-1 flex justify-center text-white">Ikke fungerende</a> 
             <a href ="https://live.megalink.no/#!/kristiansand-og-omegn-skl" target="blank_" className="flex-1 flex justify-end">Livevisning</a>       
              </div>
             </div>
@@ -59,8 +59,8 @@ export default function Resultater() {
 
         <div className="w-screen h-12 flex justify-center text-lg sm:text-2xl leading-[90%] items-center">
             <div className=" flex justify-between container">
-            <a href="" className="flex-1">Ikke fungerende</a>
-            <a href="" className="flex-1 flex justify-center">Ikke fungerende</a>
+            <a href="" className="flex-1 text-white">Ikke fungerende</a>
+            <a href="" className="flex-1 flex justify-center text-white">Ikke fungerende</a>
             <a href ="https://live.megalink.no/#!/kristiansand-og-omegn-skl" target="blank_" className="flex-1 flex justify-end">Livevisning</a>            
             </div>
             </div>
