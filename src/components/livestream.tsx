@@ -1,6 +1,6 @@
 export default function Livestream() {
     return (
-        <div className="w-screen mt-24 flex flex-col items-center justify-center">
+        <div className="w-screen mt-36 flex flex-col items-center justify-center">
             <h1 className="sm:hidden">Spiller nå</h1>
             <div className="container p-5 aspect-[16/9] mb-10 sm:p-0">
                 <iframe className="w-full h-full" 
